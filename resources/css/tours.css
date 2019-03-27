@@ -1,0 +1,36 @@
+.wrap-top-slide {
+    padding-top: 20px;
+    height: 60%;
+    width: 100%;
+    background: url('../images/slide-2.png') center no-repeat;
+    background-size: cover;
+    overflow: hidden
+}
+
+.tours-filter-block {
+    color: var(--mainColor);
+    margin-bottom: 3rem
+}
+
+.select2, .select2-container {
+    width: 100%
+}
+
+.select2-container--default .select2-selection--multiple {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--greyColor);
+    border-radius: 0;
+    cursor: text
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--greyColor);
+    border-radius: 0
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple:focus {
+    border-bottom: 2px solid var(--mainColor)
+}
