@@ -16,9 +16,9 @@
 </head>
 <body>
 
-<div class="wrap-top-slide" id="home" style='
-        background: url( @if(isset($setting["slide_img"])){{$setting["slide_img"]}}@else{{asset("./images/slide.png")}}@endif ) center no-repeat;
-        background-size: cover;'>
+<div class="wrap-top-slide" id="home" style="
+        background: url( '@if(isset($setting["slide_img"])){{$setting["slide_img"]}}@else{{asset("./images/slide.png")}}@endif' ) center no-repeat;
+        background-size: cover;">
     <nav class="navbar navbar-expand-md fixed-top navbar-dark main-nav">
         <div class="container">
             <a class="nav-link nav-logo" href="/{{$lang->title}}#home">
@@ -28,7 +28,6 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            </ul>
             <div class="ml-auto navbar-collapse collapse nav-content">
                 <ul class="nav navbar-nav mx-md-auto">
                     <li class="nav-item">
@@ -301,7 +300,7 @@
                                         <div class="form-group">
                                             <label for="city_request">{{$lang->data->city}}</label>
                                             <select class="form-control selectMultiple" id="city_request" name="city"
-                                                    multiple="multiple" width="100%">
+                                                    multiple="multiple">
                                                 @foreach($cities as $city)
                                                     <option value="{{$city->title}}">{{$city->title}}</option>
                                                 @endforeach
@@ -312,7 +311,7 @@
                                             <label for="country_request">{{$lang->data->country_name}}</label>
                                             <select class="form-control selectMultiple" id="country_request"
                                                     name="country"
-                                                    multiple="multiple" width="100%">
+                                                    multiple="multiple">
                                                 <option value="Россия">{{$lang->data->russia}}</option>
                                                 <option value="Грузия">{{$lang->data->georgia}}</option>
                                                 <option value="Азербайджан">{{$lang->data->azerbaijan}}</option>
@@ -458,25 +457,25 @@
 </body>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script>
-            {{date_default_timezone_set("Asia/Tashkent")}}
-    var timeTashkent = new Date('{{date('Y-m-d H:i:s')}}');
+{{--            {{date_default_timezone_set("Asia/Tashkent")}}--}}
+{{--    let timeTashkent = new Date('{{date('Y-m-d H:i:s')}}');--}}
 </script>
 <script type='text/javascript'>
     (function () {
-        var widget_id = 'M0yJ0FsyDh';
-        var d = document;
-        var w = window;
+        let widget_id = 'M0yJ0FsyDh';
+        let d = document;
+        let w = window;
 
         function l() {
-            var s = document.createElement('script');
+            let s = document.createElement('script');
             s.type = 'text/javascript';
             s.async = true;
             s.src = '//code.jivosite.com/script/widget/' + widget_id;
-            var ss = document.getElementsByTagName('script')[0];
+            let ss = document.getElementsByTagName('script')[0];
             ss.parentNode.insertBefore(s, ss);
         }
 
-        if (d.readyState == 'complete') {
+        if (d.readyState === 'complete') {
             l();
         } else {
             if (w.attachEvent) {
