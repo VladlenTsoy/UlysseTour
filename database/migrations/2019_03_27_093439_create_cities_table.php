@@ -15,6 +15,8 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('lang');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateSeasonsTable extends Migration
     {
         Schema::create('seasons', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('lang');
             $table->timestamps();
         });
     }

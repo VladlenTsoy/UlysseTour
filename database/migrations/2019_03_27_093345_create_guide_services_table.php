@@ -15,6 +15,9 @@ class CreateGuideServicesTable extends Migration
     {
         Schema::create('guide_services', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->string('lang');
             $table->timestamps();
         });
     }

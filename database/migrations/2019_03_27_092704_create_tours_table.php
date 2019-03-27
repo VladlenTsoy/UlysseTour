@@ -15,6 +15,32 @@ class CreateToursTable extends Migration
     {
         Schema::create('tours', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->string('image')->nullable();
+            $table->text('city')->nullable();
+            $table->string('duration')->nullable();
+            $table->string('season')->nullable();
+            $table->string('category')->nullable();
+            $table->string('max_qty_tourists')->nullable();
+            $table->string('schedule')->nullable();
+            $table->string('cost')->nullable();
+            $table->text('program')->nullable();
+            $table->text('include_service')->nullable();
+            $table->text('include_guide')->nullable();
+            $table->text('include_transport')->nullable();
+            $table->text('include_food')->nullable();
+            $table->text('conditions')->nullable();
+            $table->text('ad_service')->nullable();
+            $table->text('ad_guide')->nullable();
+            $table->text('ad_transport')->nullable();
+            $table->text('ad_food')->nullable();
+            $table->text('route')->nullable();
+            $table->text('country')->nullable();
+            $table->integer('join_group')->nullable();
+            $table->text('include_accommodations')->nullable();
+            $table->date('hot')->nullable();
+            $table->string('lang')->nullable();
             $table->timestamps();
         });
     }
