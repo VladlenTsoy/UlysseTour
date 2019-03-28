@@ -1,6 +1,3 @@
-import 'owl.carousel';
-import 'select2';
-
 window._ = require('lodash');
 
 /**
@@ -14,6 +11,8 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
+    require('owl.carousel');
+    require('select2');
 } catch (e) {
 }
 

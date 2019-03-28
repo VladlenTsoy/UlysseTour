@@ -135,7 +135,7 @@ a {
 .wrap-top-slide {
     height: calc(100% - 70px);
     width: 100%;
-    background: url(../images/slide.png) center no-repeat;
+    background: url(../files/slide.png) center no-repeat;
     background-size: cover;
     overflow: hidden
 }
@@ -353,7 +353,7 @@ a {
 
 .block-card .image {
     height: 250px;
-    background: url(../images/slide.png) center no-repeat var(--greyColor);
+    background: url(../files/slide.png) center no-repeat var(--greyColor);
     background-size: cover
 }
 
@@ -389,7 +389,7 @@ a {
     position: absolute;
     top: 8rem;
     bottom: 7rem;
-    background: url(../images/banner/about.png) center no-repeat;
+    background: url(../files/about.png) center no-repeat;
     background-size: cover
 }
 
@@ -479,7 +479,7 @@ a {
     position: absolute;
     top: -130px;
     bottom: 0;
-    background: url(../images/banner/about-2.png) bottom no-repeat;
+    background: url(../files/about-2.png) bottom no-repeat;
     background-size: cover;
     z-index: -500
 }
@@ -549,7 +549,7 @@ a {
 .block-contacts {
     padding: 2rem 0;
     margin-top: 1rem;
-    background: url(../images/ship.svg) 718px 95px no-repeat #2864A3;
+    background: url(../files/ship.svg) 718px 95px no-repeat #2864A3;
     background-size: 48%
 }
 
@@ -581,6 +581,10 @@ a {
     display: block;
     color: #FFF;
     margin-bottom: 2rem
+}
+
+.block-contacts .desc-content td{
+    color: #FFF;
 }
 
 .block-contacts .col-9:not(:last-child) .desc-content {
@@ -931,12 +935,11 @@ a {
         font-size: 16px
     }
 }
-
 .wrap-top-slide {
     padding-top: 20px;
     height: 60%;
     width: 100%;
-    background: url('../images/slide-3.png') center no-repeat;
+    background: url('../files/slide-3.png') center no-repeat;
     background-size: cover;
     overflow: hidden
 }
@@ -1037,7 +1040,7 @@ a {
     padding-top: 20px;
     height: 60%;
     width: 100%;
-    background: url('../images/slide-2.png') center no-repeat;
+    background: url('../files/slide-2.png') center no-repeat;
     background-size: cover;
     overflow: hidden
 }

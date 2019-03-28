@@ -18,7 +18,7 @@
 <body>
 
 <div class="wrap-top-slide" id="home" style="
-        background: url( '@if(isset($setting["slide_img"])){{$setting["slide_img"]}}@else{{asset("./images/slide.png")}}@endif' ) center no-repeat;
+        background: url( '@if(isset($setting["slide_img"])){{$setting["slide_img"]}}@else{{asset("./files/slide.png")}}@endif' ) center no-repeat;
         background-size: cover;">
     <nav class="navbar navbar-expand-md fixed-top navbar-dark main-nav">
         <div class="container">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </nav>
-    
+
 </div>
 
 @yield('content')
@@ -458,8 +458,8 @@
 </body>
 <!-- BEGIN JIVOSITE CODE {literal} -->
 <script>
-{{--            {{date_default_timezone_set("Asia/Tashkent")}}--}}
-{{--    let timeTashkent = new Date('{{date('Y-m-d H:i:s')}}');--}}
+            {{date_default_timezone_set("Asia/Tashkent")}}
+    let timeTashkent = new Date('{{date('Y-m-d H:i:s')}}');
 </script>
 <script type='text/javascript'>
     (function () {

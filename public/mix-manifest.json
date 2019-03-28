@@ -1,6 +1,12 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/js/bootstrap.js": "/js/bootstrap.js",
-    "/css/app.css": "/css/app.css",
-    "/css/style.css": "/css/style.css"
+    "/js/app.js": "/js/app.js?id=08ef3f0b14a802eb236f",
+    "/js/bootstrap.js": "/js/bootstrap.js?id=bbf17243b2900e600a7a",
+    "/css/app.css": "/css/app.css?id=eadb6893bd7062ddded8",
+    "/css/style.css": "/css/style.css?id=2141f4bc97cefecc1c44",
+    "/files/about-2.png": "/files/about-2.png?id=233aa96eae3a334ca813",
+    "/files/about.png": "/files/about.png?id=cd2942457d85aeea980b",
+    "/files/ship.svg": "/files/ship.svg?id=3f457bac9c96429b19aa",
+    "/files/slide-2.png": "/files/slide-2.png?id=1887b70df9e874df9aef",
+    "/files/slide-3.png": "/files/slide-3.png?id=ba7e2afc35712f777b32",
+    "/files/slide.png": "/files/slide.png?id=e998b0a28c5669b7b4e9"
 }

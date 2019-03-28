@@ -18,6 +18,7 @@ class CreateMetaTagsTable extends Migration
             $table->string('url');
             $table->string('title');
             $table->string('user_url');
+            $table->string('lang');
             $table->timestamps();
         });
     }
