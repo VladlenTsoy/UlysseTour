@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('banner')
     <div id="carouselExampleControls" class="carousel slide wrap-text-on-slide" data-ride="carousel">
         <div class="carousel-inner text-on-slide">
@@ -30,6 +29,7 @@
         </a>
     </div>
 @endsection
+
 @section('content')
     <div class="wrap-filter">
         <form class="col-12" action="/{{$lang->title}}/tours" method="get">
@@ -77,31 +77,11 @@
                     </div>
                 </div>
 
-                {{--<div class="col-lg-2">--}}
-                {{--<div class="form-group row align-items-center">--}}
-                {{--<div class="col-12">--}}
-                {{--<select class="form-control form-control-sm service_filter">--}}
-                {{--<option>Фильтрация</option>--}}
-                {{--</select>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-                {{--</div>--}}
-
                 <div class="col-lg-2">
-                    {{--<div class="form-group row align-items-center">--}}
-                    {{--<label for="count-filter" class="col-sm-7 col-form-label">{{$lang->data->count_people}}</label>--}}
-                    {{--<div class="col-sm-5">--}}
-                    {{--<input type="number" class="form-control form-control-sm" id="count-filter" min="0"--}}
-                    {{--name="count_people"--}}
-                    {{--value="0">--}}
-                    {{--</div>--}}
-                    {{--</div>--}}
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="join_the_group"
-                                   name="join_the_group" value="1">
-                            <label class="custom-control-label custom-index-page"
-                                   for="join_the_group">{{$lang->data->join_the_group}}</label>
+                            <input type="checkbox" class="custom-control-input" id="join_the_group" name="join_the_group" value="1">
+                            <label class="custom-control-label" for="join_the_group">{{$lang->data->join_the_group}}</label>
                         </div>
                     </div>
                 </div>
@@ -114,53 +94,55 @@
         </form>
     </div>
 
-    <div class="block-content container" id="hot-tours">
-        <div class="col-12 title-block">
-            <span class="title">{{$lang->data->hot}}</span>
-            <span class="sub">{{$lang->data->offers}}</span>
-        </div>
+    @if(count($hotTours))
+        <div class="block-content container" id="hot-tours">
+            <div class="col-12 title-block">
+                <span class="title">{{$lang->data->hot}}</span>
+                <span class="sub">{{$lang->data->offers}}</span>
+            </div>
 
-        <div class="col-12 hot-offers owl-carousel owl-theme">
-            @foreach($hotTours as $tour)
-                <div class="block-card">
-                    <div class="image"
-                         style="background: var(--greyColor) url({{asset($tour->image)}}) center no-repeat;
-                                 background-size: cover;"></div>
-                    <div class="col-12 content">
-                        <div class="row align-items-end">
-                            <div class="col-12">
-                                <span class="title-content">{{$tour->title}}</span>
-                            </div>
-                            <div class="col-10">
-                                <div class="desc-content">
-                                    <p class="blackColor">{{$tour->category_title}}</p>
-                                    <p class="blackColor">
-                                        <i class="fa fa-clock-o"></i> {{ date('d-m-Y', strtotime(date($tour->hot)))}}
-                                    </p>
-                                    <p>
-                                        <i class="fa fa-map-marker"></i>
-                                        <span class="blackColor">
-                                           @foreach($tour->city_title as $key=>$city)
-                                                {{$city}}@if($key !== count($tour->city_title)-1),@endif
-                                            @endforeach
-                                    </span>
-                                    </p>
-                                    <p>{{$lang->data->season}}: <span
-                                                class="blackColor">{{$tour->season_title}}</span></p>
-                                    <p>{{$lang->data->durations}}: <span
-                                                class="blackColor">{{$tour->duration}}</span></p>
+            <div class="col-12 hot-offers owl-carousel owl-theme">
+                @foreach($hotTours as $tour)
+                    <div class="block-card">
+                        <div class="image"
+                             style="background: var(--greyColor) url({{asset($tour->image)}}) center no-repeat;
+                                     background-size: cover;"></div>
+                        <div class="col-12 content">
+                            <div class="row align-items-end">
+                                <div class="col-12">
+                                    <span class="title-content">{{$tour->title}}</span>
                                 </div>
-                            </div>
-                            <div class="col-2">
-                                <a href="/{{$lang->title}}/hot-tour/{{$tour->id}}"><img
-                                            src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
+                                <div class="col-10">
+                                    <div class="desc-content">
+                                        <p class="blackColor">{{$tour->category_title}}</p>
+                                        <p class="blackColor">
+                                            <i class="fa fa-clock-o"></i> {{ date('d-m-Y', strtotime(date($tour->hot)))}}
+                                        </p>
+                                        <p>
+                                            <i class="fa fa-map-marker"></i>
+                                            <span class="blackColor">
+                                           @foreach($tour->city_title as $key=>$city)
+                                                    {{$city}}@if($key !== count($tour->city_title)-1),@endif
+                                                @endforeach
+                                    </span>
+                                        </p>
+                                        <p>{{$lang->data->season}}: <span
+                                                    class="blackColor">{{$tour->season_title}}</span></p>
+                                        <p>{{$lang->data->durations}}: <span
+                                                    class="blackColor">{{$tour->duration}}</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <a href="/{{$lang->title}}/hot-tour/{{$tour->id}}"><img
+                                                src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
+            </div>
         </div>
-    </div>
+    @endif
 
     <div class="block-content block-sub-image" id="tours">
         <div class="container">
@@ -201,7 +183,7 @@
                                         </div>
                                     </div>
                                     <div class="col-1 action">
-                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}"><img
+                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
                                                     src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
                                     </div>
                                 </div>
@@ -242,7 +224,7 @@
                                         </div>
                                     </div>
                                     <div class="col-1 action">
-                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}"><img
+                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
                                                     src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
                                     </div>
                                 </div>

@@ -8,7 +8,7 @@ class Guide extends Model
 {
     //
     protected $fillable = [
-        'title', 'description', 'created_at', 'updated_at', 'lang',
+        'title', 'description', 'url', 'meta_title', 'meta_description', 'created_at', 'updated_at', 'lang',
     ];
 
     /**
@@ -35,7 +35,7 @@ class Guide extends Model
         // Trim the string of leading/trailing space
         $clear = trim($clear);
         //
-        $clear = mb_strimwidth($clear, 0, 250).' ...';
+        $clear = mb_strimwidth($clear, 0, 250) . ' ...';
 
         return $this->attributes['min_description'] = $clear;
     }

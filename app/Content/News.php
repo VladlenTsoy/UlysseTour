@@ -8,7 +8,7 @@ class News extends Model
 {
     //
     protected $fillable = [
-        'title', 'image', 'description', 'created_at', 'updated_at', 'lang',
+        'title', 'image', 'description', 'url', 'meta_title', 'meta_description', 'created_at', 'updated_at', 'lang',
     ];
 
     protected $appends = ['min_description'];
@@ -30,7 +30,7 @@ class News extends Model
         // Trim the string of leading/trailing space
         $clear = trim($clear);
         //
-        $clear = mb_strimwidth($clear, 0, 250).' ...';
+        $clear = mb_strimwidth($clear, 0, 250) . ' ...';
 
         return $this->attributes['min_description'] = $clear;
     }

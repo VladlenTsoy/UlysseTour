@@ -15,11 +15,9 @@ mix.js('resources/js/bootstrap.js', 'public/js')
     .js('resources/js/app.js', 'public/js').version()
     .js('resources/js/admin.js', 'public/js').version()
 // Style
-    .styles([
-        'resources/css/style.css',
-        'resources/css/tour.css',
-        'resources/css/tours.css',
-    ], 'public/css/style.css').version()
+    .styles('resources/css/style.css', 'public/css/style.css').version()
+    .styles('resources/css/tour.css', 'public/css/tour.css').version()
+    .styles('resources/css/tours.css', 'public/css/tours.css').version()
     .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin.scss', 'public/css');
 

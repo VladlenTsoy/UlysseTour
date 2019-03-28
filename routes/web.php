@@ -17,6 +17,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'Admin\HomeController@index')->name('home');
     Route::get('/home', 'Admin\HomeController@index')->name('home');
 
+    Route::post('/load/image', 'SettingController@loadImage');
+
+
     Route::get('/tours', 'Admin\TourController@all');
 
     Route::get('/tour/create/{lang}', 'Admin\TourController@tourCreate');
@@ -59,8 +62,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/banner/{id}', 'Admin\BannerController@bannerEditById')->where('id', '[0-9]+');
     Route::get('/banner/{id}/delete', 'Admin\BannerController@bannerDeleteById')->where('id', '[0-9]+');
 
-    Route::post('/load/image', 'AdminController@loadImage');
-
     Route::get('/include/{table}', 'Admin\ServiceController@services');
 
     Route::get('/include/{table}/create', 'Admin\ServiceController@serviceCreate');
@@ -68,6 +69,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/include/{table}/{id}', 'Admin\ServiceController@serviceGetById')->where('id', '[0-9]+');
     Route::post('/include/{table}/{id}', 'Admin\ServiceController@serviceEditById')->where('id', '[0-9]+');
     Route::get('/include/{table}/{id}/delete', 'Admin\ServiceController@serviceDeleteById')->where('id', '[0-9]+');
+
+    Route::get('/tags', 'Admin\MetatagController@all');
 
 
     Route::get('/{table}', 'Admin\SubController@selectAllTable');
@@ -78,3 +81,25 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/{table}/{id}', 'Admin\SubController@tableEditById')->where('id', '[0-9]+');
     Route::get('/{table}/{id}/delete', 'Admin\SubController@tableDeleteById')->where('id', '[0-9]+');
 });
+
+
+Route::post('/book_it/send_mail_message/tour', 'SettingController@bookItSendMailTour');
+Route::post('/book_it/send_mail_message/create_tour', 'SettingController@bookItSendMailTour');
+Route::post('/schedule', ['as' => 'id', 'uses' => 'SettingController@scheduleApi']);
+
+
+Route::get('/{lang}/tours', 'TourController@all');
+Route::get('/{lang}/tour/{id}/{title?}', 'TourController@getByID')->where('id', '[0-9]+');
+
+//
+Route::get('/{lang}/hot-tours', 'TourController@hotTours');
+Route::get('/{lang}/hot-tour/{id}', 'TourController@hotTourGetByID')->where('id', '[0-9]+');
+
+//
+Route::get('/{lang}/news', 'NewsController@all');
+Route::get('/{lang}/news/{id}', 'NewsController@getByID')->where('id', '[0-9]+');
+
+//
+Route::get('/{lang}/guide', 'GuideController@all');
+Route::get('/{lang}/guide/{id}', 'GuideController@getByID')->where('id', '[0-9]+');
+

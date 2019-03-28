@@ -16,8 +16,9 @@ class CreateMetaTagsTable extends Migration
         Schema::create('meta_tags', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('url');
-            $table->string('title');
-            $table->string('user_url');
+            $table->string('title')->nullable();
+            $table->string('description')->nullable();
+            $table->string('user_url')->nullable();
             $table->string('lang');
             $table->timestamps();
         });

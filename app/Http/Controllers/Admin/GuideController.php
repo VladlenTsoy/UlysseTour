@@ -37,6 +37,9 @@ class GuideController extends Controller
         Guide::create([
             'title' => $title,
             'description' => $description,
+            'meta_title' => $request->get('meta_title'),
+            'meta_description' => $request->get('meta_description'),
+            'url' => $request->get('url'),
             'lang' => $lang,
         ]);
         return redirect()->intended('/admin/guides');
@@ -62,6 +65,9 @@ class GuideController extends Controller
         Guide::find($id)->update([
             'title' => $title,
             'description' => $description,
+            'meta_title' => $request->get('meta_title'),
+            'meta_description' => $request->get('meta_description'),
+            'url' => $request->get('url'),
             'lang' => $lang,
         ]);
         return redirect()->intended('/admin/guides');

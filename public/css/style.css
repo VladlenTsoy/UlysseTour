@@ -261,6 +261,10 @@ a {
     margin-top: 1px
 }
 
+.wrap-filter .custom-checkbox{
+    margin-top: 7px;
+}
+
 .wrap-filter .block-btn {
     position: relative;
     padding: 0;
@@ -934,141 +938,4 @@ a {
     .block-footer .copyright {
         font-size: 16px
     }
-}
-.wrap-top-slide {
-    padding-top: 20px;
-    height: 60%;
-    width: 100%;
-    background: url('../files/slide-3.png') center no-repeat;
-    background-size: cover;
-    overflow: hidden
-}
-
-.details-tour .title-block {
-    font-size: 30px;
-    margin-bottom: 1rem;
-    display: block;
-    color: var(--mainColor);
-    font-weight: 700
-}
-
-.details-tour .title {
-    color: var(--secondGreyColor);
-    font-size: 16px
-}
-
-.details-tour .desc {
-    color: var(--mainColor);
-    font-size: 16px;
-    font-weight: 700;
-    text-align: right
-}
-
-.details-tour .desc-content {
-    color: var(--blackColor);
-    font-size: 14px
-}
-
-.block-mini-desc {
-    background: var(--mainColor)
-}
-
-.block-mini-desc a {
-    color: #fff;
-    text-decoration: underline
-}
-
-.block-mini-desc .title {
-    color: #FFF;
-    display: block;
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 1rem
-}
-
-.block-mini-desc .desc-content {
-    font-size: 14px;
-    color: #FFF;
-    margin-bottom: 0
-}
-
-.block-programs .title {
-    color: var(--mainColor);
-    display: block;
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 1rem
-}
-
-.block-programs .desc-content {
-    font-size: 14px;
-    color: var(--blackColor);
-    margin-bottom: 2rem
-}
-
-.accordion-programs-block .card {
-    border: 0;
-    border-radius: 0
-}
-
-.accordion-programs-block .card .card-header:first-child {
-    border-radius: 0
-}
-
-.accordion-programs-block .card .card-header {
-    background-color: var(--mainColor);
-    color: #fff;
-    border: 0;
-    padding: 0
-}
-
-.accordion-programs-block .card .card-header h5 .btn-link {
-    color: #fff;
-    font-weight: 700
-}
-
-.accordion-programs-block .card .card-body {
-    color: var(--blackColor);
-    font-size: 14px
-}
-
-.modal-body img {
-    max-width: 100%
-}
-
-.wrap-top-slide {
-    padding-top: 20px;
-    height: 60%;
-    width: 100%;
-    background: url('../files/slide-2.png') center no-repeat;
-    background-size: cover;
-    overflow: hidden
-}
-
-.tours-filter-block {
-    color: var(--mainColor);
-    margin-bottom: 3rem
-}
-
-.select2, .select2-container {
-    width: 100%
-}
-
-.select2-container--default .select2-selection--multiple {
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid var(--greyColor);
-    border-radius: 0;
-    cursor: text
-}
-
-.select2-container--default.select2-container--focus .select2-selection--multiple {
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid var(--greyColor);
-    border-radius: 0
-}
-
-.select2-container--default.select2-container--focus .select2-selection--multiple:focus {
-    border-bottom: 2px solid var(--mainColor)
 }

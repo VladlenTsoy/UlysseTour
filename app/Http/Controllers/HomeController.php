@@ -15,37 +15,31 @@ class HomeController extends Controller
 {
     public function index($lang = false)
     {
-        if (!$lang)
-            return redirect('/en');
+        if (!$lang) return redirect('/en');
+        $language = Language::where('title', $lang)->first();
 
-        $lang = Language::where('title', $lang)->first();
-        $langs = Language::all();
+        $languages = Language::all();
+        $guides = Guide::where('lang', $language->title)->latest()->get();
+        $news = News::where('lang', $language->title)->latest()->limit(3)->get();
+        $sATours = Tour::where(['lang' => $language->title, 'country' => 0, 'hot' => null])->latest()->limit(3)->get();
+        $uzTours = Tour::where(['lang' => $language->title, 'country' => 1, 'hot' => null])->latest()->limit(3)->get();
+        $hotTours = Tour::where([['lang', '=', $language->title], ['hot', '>', date("Y-m-d")]])->latest()->get();
 
-        if (!$lang)
-            return redirect('/ru');
+        $categories = Category::where('lang', $language->title)->get();
+        $cities = City::where('lang', $language->title)->get();
+        $seasons = Season::where('lang', $language->title)->get();
 
-        $guides = Guide::where('lang', $lang->title)->get();
-        $news = News::where('lang', $lang->title)->latest()->limit(3)->get();
-        $sATours = Tour::where(['lang' => $lang->title, 'country' => 0, 'hot' => null])->latest()->limit(3)->get();
-        $uzTours = Tour::where(['lang' => $lang->title, 'country' => 1, 'hot' => null])->latest()->limit(3)->get();
-        $hotTours = Tour::where([['lang', '=', $lang->title], ['hot', '>', date("Y-m-d")]])->latest()->get();
-
-        $categories = Category::where('lang', $lang->title)->get();
-        $cities = City::where('lang', $lang->title)->get();
-        $seasons = Season::where('lang', $lang->title)->get();
-
-        $banners = Banner::where('lang', $lang->title)
-            ->get();
+        $banners = Banner::where('lang', $language->title)->get();
 
         $setting = [
-            'title' => $lang->data->title_site,
-            'description' => $lang->data->description_site,
+            'title' => $language->data->title_site,
+            'description' => $language->data->description_site,
         ];
 
-
         return view('home', [
-            'lang' => $lang,
-            'langs' => $langs,
+            'lang' => $language,
+            'langs' => $languages,
+            'index' => true,
             'guides' => $guides,
             'news' => $news,
             'sATours' => $sATours,

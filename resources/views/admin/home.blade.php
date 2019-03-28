@@ -149,6 +149,16 @@
                 </div>
             </div>
 
+
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Метатеги</h5>
+                        <a href="{{url('/admin/tags')}}" class="btn btn-block btn-warning">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+
             {{--<div class="col-4">--}}
                 {{--<div class="card">--}}
                     {{--<div class="card-header">--}}

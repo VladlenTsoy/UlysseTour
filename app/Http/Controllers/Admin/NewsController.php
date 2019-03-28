@@ -36,6 +36,9 @@ class NewsController extends Controller
 
         $newsId = News::create([
             'title' => $title,
+            'meta_title' => $request->get('meta_title'),
+            'meta_description' => $request->get('meta_description'),
+            'url' => $request->get('url'),
             'description' => $description,
             'lang' => $lang,
         ])->id;
@@ -70,6 +73,9 @@ class NewsController extends Controller
         News::find($id)->update([
             'title' => $title,
             'description' => $description,
+            'meta_title' => $request->get('meta_title'),
+            'meta_description' => $request->get('meta_description'),
+            'url' => $request->get('url'),
             'lang' => $lang,
         ]);
 
