@@ -1,5 +1,35 @@
 @extends('layouts.app')
 
+@section('banner')
+    <div id="carouselExampleControls" class="carousel slide wrap-text-on-slide" data-ride="carousel">
+        <div class="carousel-inner text-on-slide">
+            @foreach($banners as $key=>$banner)
+                <div class="carousel-item carousel-hm @if($key === 0) active @endif"
+                     style="background: url('{{$banner->image}}') center no-repeat; background-size: cover;">
+                    {{--<img class="d-block w-100" src="{{$banner->image}}" alt="{{$banner->title}}">--}}
+                    <div class="child">
+                        <span class="sub-text">{{$banner->sub_title}}</span>
+                        <span class="main-text">{{$banner->title}}</span>
+                        @if($banner->link)
+                            <a class="btn btn-primary" style="margin-top: 0.5rem"
+                               href="{{$banner->link}}">{{$banner->name_link}}</a>
+                        @endif
+                    </div>
+                    <div class="helper"></div>
+                </div>
+            @endforeach
+
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+@endsection
 @section('content')
     <div class="wrap-filter">
         <form class="col-12" action="/{{$lang->title}}/tours" method="get">

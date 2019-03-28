@@ -45933,6 +45933,17 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/admin.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/admin.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -45945,14 +45956,15 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!*******************************************************************!*\
-  !*** multi ./resources/js/bootstrap.js ./resources/sass/app.scss ***!
-  \*******************************************************************/
+/*!***********************************************************************************************!*\
+  !*** multi ./resources/js/bootstrap.js ./resources/sass/app.scss ./resources/sass/admin.scss ***!
+  \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\OSPanel\domains\Ulysse\tour\resources\js\bootstrap.js */"./resources/js/bootstrap.js");
-module.exports = __webpack_require__(/*! C:\OSPanel\domains\Ulysse\tour\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\OSPanel\domains\Ulysse\tour\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\OSPanel\domains\Ulysse\tour\resources\sass\admin.scss */"./resources/sass/admin.scss");
 
 
 /***/ })

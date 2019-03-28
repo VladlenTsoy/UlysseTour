@@ -166,7 +166,7 @@ class Tour extends Model
 
     public function getSeasonTitleAttribute()
     {
-        $season = Season::find($this->attributes['season'])->first(['title']);
+        $season = Season::find($this->attributes['season']);
         return $this->attributes['season_title'] = $season ? $season->title : null;
     }
 

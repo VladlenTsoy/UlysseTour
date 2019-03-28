@@ -18,7 +18,7 @@
 <body>
 
 <div class="wrap-top-slide" id="home" style="
-        background: url( '@if(isset($setting["slide_img"])){{$setting["slide_img"]}}@else{{asset("./files/slide.png")}}@endif' ) center no-repeat;
+        background: url( '{{isset($banners[0]) ? $banners[0]->image : asset('images/slide.png')}}' ) center no-repeat;
         background-size: cover;">
     <nav class="navbar navbar-expand-md fixed-top navbar-dark main-nav">
         <div class="container">
@@ -75,7 +75,7 @@
             </div>
         </div>
     </nav>
-
+    @yield('banner')
 </div>
 
 @yield('content')

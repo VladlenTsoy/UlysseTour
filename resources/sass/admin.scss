@@ -1,0 +1,31 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Variables
+@import 'variables';
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+@import '~select2/src/scss/core';
+@import '~datatables.net-bs4/css/dataTables.bootstrap4.css';
+
+// Навбар
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+// Список всех
+.card-title-block {
+  display: flex;
+  align-content: center;
+
+  .card-title {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
+
+.sorting_1, .sorting_asc, .sorting_desc {
+  color: #212529!important;
+}
+
