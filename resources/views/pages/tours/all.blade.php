@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="block-content container">
         <div class="col-12">
             <div class="row">
@@ -11,11 +10,11 @@
                             <input type="hidden" name="country" hidden value="{{$country}}">
                         @endif
                         <div class="form-group row">
-                            <label for="from_filter" class="col-sm-3 col-form-label">{{$lang->data->category}}</label>
+                            <label for="from_filter" class="col-sm-3 col-form-label">{{$_lang->data->category}}</label>
                             <div class="col-sm-9">
                                 <select class="form-control " id="from_filter" name="category">
-                                    <option value="0">{{$lang->data->all}}</option>
-                                    @foreach($categories as $category)
+                                    <option value="0">{{$_lang->data->all}}</option>
+                                    @foreach($_categories as $category)
                                         <option value="{{$category->id}}"
                                                 @if(isset($search['category']) && $search['category'] == $category->id) selected @endif>{{$category->title}}</option>
                                     @endforeach
@@ -24,11 +23,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="category_filter" class="col-sm-3 col-form-label">{{$lang->data->city}}</label>
+                            <label for="category_filter" class="col-sm-3 col-form-label">{{$_lang->data->city}}</label>
                             <div class="col-sm-9">
                                 <select class="form-control " id="category_filter" name="city">
-                                    <option value="0">{{$lang->data->all}}</option>
-                                    @foreach($cities as $city)
+                                    <option value="0">{{$_lang->data->all}}</option>
+                                    @foreach($_cities as $city)
                                         <option value="{{$city->id}}"
                                                 @if(isset($search['city']) && $search['city'] == $city->id) selected @endif>{{$city->title}}</option>
                                     @endforeach
@@ -37,11 +36,11 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="season_filter" class="col-sm-3 col-form-label">{{$lang->data->season}}</label>
+                            <label for="season_filter" class="col-sm-3 col-form-label">{{$_lang->data->season}}</label>
                             <div class="col-sm-9">
                                 <select class="form-control " id="season_filter" name="season">
-                                    <option value="0">{{$lang->data->all}}</option>
-                                    @foreach($seasons as $season)
+                                    <option value="0">{{$_lang->data->all}}</option>
+                                    @foreach($_seasons as $season)
                                         <option value="{{$season->id}}"
                                                 @if(isset($search['season']) && $search['season'] == $season->id) selected @endif>{{$season->title}}</option>
                                     @endforeach
@@ -58,13 +57,13 @@
                         {{--</div>--}}
 
                         <div class="form-group">
-                            <p>{{$lang->data->join_group}}</p>
+                            <p>{{$_lang->data->join_group}}</p>
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="joinTheGroup1" name="join_the_group"
                                        class="custom-control-input" value="1"
                                        @if( isset($search['join_group']) && $search['join_group'] == 1 ) checked @endif
                                 >
-                                <label class="custom-control-label" for="joinTheGroup1">{{$lang->data->yes}}</label>
+                                <label class="custom-control-label" for="joinTheGroup1">{{$_lang->data->yes}}</label>
                             </div>
 
                             <div class="custom-control custom-radio">
@@ -72,7 +71,7 @@
                                        class="custom-control-input" value="2"
                                        @if( isset($search['join_group']) && $search['join_group'] == 2 ) checked @endif
                                 >
-                                <label class="custom-control-label" for="joinTheGroup2">{{$lang->data->no}}</label>
+                                <label class="custom-control-label" for="joinTheGroup2">{{$_lang->data->no}}</label>
                             </div>
 
                             <div class="custom-control custom-radio">
@@ -81,11 +80,11 @@
                                        @if( !isset($search['join_group']) ) checked @endif
                                 >
                                 <label class="custom-control-label"
-                                       for="joinTheGroup3">{{$lang->data->irrelevant}}</label>
+                                       for="joinTheGroup3">{{$_lang->data->irrelevant}}</label>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-block">{{$lang->data->search}}</button>
+                        <button type="submit" class="btn btn-primary btn-block">{{$_lang->data->search}}</button>
                     </form>
                 </div>
                 <div class="col-md-8">
@@ -115,14 +114,14 @@
                                             @endforeach
                                         </span>
                                     </p>
-                                    <p>{{$lang->data->season}}: <span class="blackColor">{{$tour->season_title}}</span>
+                                    <p>{{$_lang->data->season}}: <span class="blackColor">{{$tour->season_title}}</span>
                                     </p>
-                                    <p>{{$lang->data->durations}}: <span
+                                    <p>{{$_lang->data->durations}}: <span
                                                 class="blackColor">{{$tour->duration}}</span></p>
                                 </div>
                             </div>
                             <div class="col-1 action">
-                                <a href="/{{$lang->title}}/{{$setting['link'] ?? 'tour'}}/{{$tour->id}}"><img
+                                <a href="/{{$_lang->title}}/{{$setting['link'] ?? 'tour'}}/{{$tour->id}}/{{$tour->url}}"><img
                                             src="{{asset('./images/arrow-right.svg')}}" alt="" width="25px"></a>
                             </div>
                         </div>

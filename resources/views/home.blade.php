@@ -32,16 +32,16 @@
 
 @section('content')
     <div class="wrap-filter">
-        <form class="col-12" action="/{{$lang->title}}/tours" method="get">
+        <form class="col-12" action="/{{$_lang->title}}/tours" method="get">
             <div class="row">
 
                 <div class="col-lg-3">
                     <div class="form-group row align-items-center">
-                        <label for="from_filter" class="col-sm-3 col-form-label">{{$lang->data->category}}</label>
+                        <label for="from_filter" class="col-sm-3 col-form-label">{{$_lang->data->category}}</label>
                         <div class="col-sm-9">
                             <select class="form-control form-control-sm" id="from_filter" name="category">
-                                <option value="0">{{$lang->data->all}}</option>
-                                @foreach($categories as $category)
+                                <option value="0">{{$_lang->data->all}}</option>
+                                @foreach($_categories as $category)
                                     <option value="{{$category->id}}">{{$category->title}}</option>
                                 @endforeach
                             </select>
@@ -51,11 +51,11 @@
 
                 <div class="col-lg-3">
                     <div class="form-group row align-items-center">
-                        <label for="city_filter" class="col-sm-3 col-form-label">{{$lang->data->city}}</label>
+                        <label for="city_filter" class="col-sm-3 col-form-label">{{$_lang->data->city}}</label>
                         <div class="col-sm-9">
                             <select class="form-control form-control-sm" id="city_filter" name="city">
-                                <option value="0">{{$lang->data->all}}</option>
-                                @foreach($cities as $city)
+                                <option value="0">{{$_lang->data->all}}</option>
+                                @foreach($_cities as $city)
                                     <option value="{{$city->id}}">{{$city->title}}</option>
                                 @endforeach
                             </select>
@@ -65,11 +65,11 @@
 
                 <div class="col-lg-3">
                     <div class="form-group row align-items-center">
-                        <label for="season_filter" class="col-sm-3 col-form-label">{{$lang->data->season}}</label>
+                        <label for="season_filter" class="col-sm-3 col-form-label">{{$_lang->data->season}}</label>
                         <div class="col-sm-9">
                             <select class="form-control form-control-sm" id="season_filter" name="season">
-                                <option value="0">{{$lang->data->all}}</option>
-                                @foreach($season as $item)
+                                <option value="0">{{$_lang->data->all}}</option>
+                                @foreach($_seasons as $item)
                                     <option value="{{$item->id}}">{{$item->title}}</option>
                                 @endforeach
                             </select>
@@ -81,13 +81,13 @@
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="join_the_group" name="join_the_group" value="1">
-                            <label class="custom-control-label" for="join_the_group">{{$lang->data->join_the_group}}</label>
+                            <label class="custom-control-label" for="join_the_group">{{$_lang->data->join_the_group}}</label>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-1 block-btn">
-                    <button type="submit" class="btn-filter">{{$lang->data->search}}</button>
+                    <button type="submit" class="btn-filter">{{$_lang->data->search}}</button>
                 </div>
 
             </div>
@@ -97,8 +97,8 @@
     @if(count($hotTours))
         <div class="block-content container" id="hot-tours">
             <div class="col-12 title-block">
-                <span class="title">{{$lang->data->hot}}</span>
-                <span class="sub">{{$lang->data->offers}}</span>
+                <span class="title">{{$_lang->data->hot}}</span>
+                <span class="sub">{{$_lang->data->offers}}</span>
             </div>
 
             <div class="col-12 hot-offers owl-carousel owl-theme">
@@ -126,14 +126,14 @@
                                                 @endforeach
                                     </span>
                                         </p>
-                                        <p>{{$lang->data->season}}: <span
+                                        <p>{{$_lang->data->season}}: <span
                                                     class="blackColor">{{$tour->season_title}}</span></p>
-                                        <p>{{$lang->data->durations}}: <span
+                                        <p>{{$_lang->data->durations}}: <span
                                                     class="blackColor">{{$tour->duration}}</span></p>
                                     </div>
                                 </div>
                                 <div class="col-2">
-                                    <a href="/{{$lang->title}}/hot-tour/{{$tour->id}}"><img
+                                    <a href="/{{$_lang->title}}/hot-tour/{{$tour->id}}/{{$tour->url}}"><img
                                                 src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
                                 </div>
                             </div>
@@ -152,9 +152,9 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/{{$lang->title}}/tours?country=1" class=" title-block">
-                                    <span class="sub">{{$lang->data->tours}}</span>
-                                    <span class="title">{{$lang->data->inUzbekistan}}</span>
+                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-1'][0]->user_url}}?country=1" class=" title-block">
+                                    <span class="sub">{{$_lang->data->tours}}</span>
+                                    <span class="title">{{$_lang->data->inUzbekistan}}</span>
                                 </a>
                             </div>
 
@@ -176,14 +176,14 @@
                                                     @endforeach
                                                 </span>
                                             </p>
-                                            <p>{{$lang->data->season}}: <span
+                                            <p>{{$_lang->data->season}}: <span
                                                         class="blackColor">{{$tour->season_title}}</span></p>
-                                            <p>{{$lang->data->durations}}: <span
+                                            <p>{{$_lang->data->durations}}: <span
                                                         class="blackColor">{{$tour->duration}}</span></p>
                                         </div>
                                     </div>
                                     <div class="col-1 action">
-                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
+                                        <a href="/{{$_lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
                                                     src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
                                     </div>
                                 </div>
@@ -194,9 +194,9 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/{{$lang->title}}/tours?country=0" class=" title-block text-right">
-                                    <span class="sub">{{$lang->data->tours}}</span>
-                                    <span class="title">{{$lang->data->inCentralAsia}}</span>
+                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-0'][0]->user_url}}?country=0" class=" title-block text-right">
+                                    <span class="sub">{{$_lang->data->tours}}</span>
+                                    <span class="title">{{$_lang->data->inCentralAsia}}</span>
                                 </a>
                             </div>
 
@@ -224,7 +224,7 @@
                                         </div>
                                     </div>
                                     <div class="col-1 action">
-                                        <a href="/{{$lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
+                                        <a href="/{{$_lang->title}}/tour/{{$tour->id}}/{{$tour->url}}"><img
                                                     src="{{asset('./images/arrow-right.svg')}}" alt=""></a>
                                     </div>
                                 </div>
@@ -244,37 +244,37 @@
 
                 <div class="block-plus">
                     <div class="image">
-                        <img src="{{asset('./images/selection.svg')}}" alt="{{$lang->data->pluses[0]->title}}">
+                        <img src="{{asset('./images/selection.svg')}}" alt="{{$_lang->data->pluses[0]->title}}">
                     </div>
                     <div class="title">
-                        {{$lang->data->pluses[0]->title}}
+                        {{$_lang->data->pluses[0]->title}}
                     </div>
                     <div class="desc-content">
-                        {{$lang->data->pluses[0]->description}}
+                        {{$_lang->data->pluses[0]->description}}
                     </div>
                 </div>
 
                 <div class="block-plus">
                     <div class="image">
-                        <img src="{{asset('./images/team.svg')}}" alt="{{$lang->data->pluses[1]->title}}">
+                        <img src="{{asset('./images/team.svg')}}" alt="{{$_lang->data->pluses[1]->title}}">
                     </div>
                     <div class="title">
-                        {{$lang->data->pluses[1]->title}}
+                        {{$_lang->data->pluses[1]->title}}
                     </div>
                     <div class="desc-content">
-                        {{$lang->data->pluses[1]->description}}
+                        {{$_lang->data->pluses[1]->description}}
                     </div>
                 </div>
 
                 <div class="block-plus">
                     <div class="image">
-                        <img src="{{asset('./images/service.svg')}}" alt="{{$lang->data->pluses[2]->title}}">
+                        <img src="{{asset('./images/service.svg')}}" alt="{{$_lang->data->pluses[2]->title}}">
                     </div>
                     <div class="title">
-                        {{$lang->data->pluses[2]->title}}
+                        {{$_lang->data->pluses[2]->title}}
                     </div>
                     <div class="desc-content">
-                        {{$lang->data->pluses[2]->description}}
+                        {{$_lang->data->pluses[2]->description}}
                     </div>
                 </div>
 
@@ -288,7 +288,7 @@
                 <div class="col-md-10">
                     <div class="title">Ulysse Tour</div>
                     <div class="desc-content">
-                        {!! $lang->data->aboutus !!}
+                        {!! $_lang->data->aboutus !!}
                     </div>
                 </div>
             </div>
@@ -297,11 +297,11 @@
 
     <div class="block-content container" id="news">
         <div class=" title-block text-center">
-            <span class="title-single">{{$lang->data->news}}</span>
+            <span class="title-single">{{$_lang->data->news}}</span>
         </div>
         <div class="block-news owl-carousel owl-theme">
 
-            @foreach($news as $item)
+            @foreach($_news as $item)
                 <div class="block-news-once">
                     <div class="col-12">
                         <div class="row">
@@ -319,8 +319,8 @@
                                 <p class="desc-content">{{$item->min_description}}</p>
                             </div>
                             <div class="col-12">
-                                <a href="/{{$lang->title}}/news/{{$item->id}}" class="btn btn-primary">
-                                    {{$lang->data->read_more}}
+                                <a href="/{{$_lang->title}}/news/{{$item->id}}/{{$item->url}}" class="btn btn-primary">
+                                    {{$_lang->data->read_more}}
                                 </a>
                             </div>
                         </div>

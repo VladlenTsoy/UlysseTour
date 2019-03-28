@@ -184,7 +184,7 @@ window.initMap = function initMap() {
         })
     }
 }
-
+$(document).ready(() => $('.loader', document).fadeOut(500));
 //
 // $(document).ready(function () {
 //

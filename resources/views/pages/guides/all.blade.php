@@ -13,7 +13,7 @@
                                 <p class="desc-content">{{$item->min_description}}</p>
                             </div>
                             <div class="col-12 text-right">
-                                <a href="/{{$lang->title}}/guide/{{$item->id}}" class="btn btn-primary">{{$lang->data->read_more}}</a>
+                                <a href="/{{$_lang->title}}/guide/{{$item->id}}/{{$item->url}}" class="btn btn-primary">{{$_lang->data->read_more}}</a>
                             </div>
                         </div>
                     </div>

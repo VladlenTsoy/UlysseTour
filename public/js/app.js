@@ -384,7 +384,11 @@ window.initMap = function initMap() {
       m == google.maps.DirectionsStatus.OK && f.setDirections(l);
     });
   }
-}; //
+};
+
+$(document).ready(function () {
+  return $('.loader', document).fadeOut(500);
+}); //
 // $(document).ready(function () {
 //
 //     $('.hot-offers').owlCarousel({

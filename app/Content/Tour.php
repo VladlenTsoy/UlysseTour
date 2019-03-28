@@ -157,7 +157,7 @@ class Tour extends Model
 
     public function getCategoryTitleAttribute()
     {
-        $category = Category::find($this->attributes['category'])->first(['title']);
+        $category = Category::where('id', $this->attributes['category'])->first(['title']);
         return $this->attributes['category_title'] = $category->title;
     }
 
@@ -169,8 +169,8 @@ class Tour extends Model
 
     public function getSeasonTitleAttribute()
     {
-        $season = Season::find($this->attributes['season']);
-        return $this->attributes['season_title'] = $season ? $season->title : null;
+        $season = Season::where('id', $this->attributes['season'])->first(['title']);
+        return $season ? $season->title : null;
     }
 
     public function getCityTitleAttribute()
@@ -185,7 +185,7 @@ class Tour extends Model
         $cities_title = [];
 
         foreach ($cities as $city) {
-            $cityDB = City::find($city)->first();
+            $cityDB = City::where('id', $city)->first();
             array_push($cities_title, $cityDB->title);
         }
 
@@ -204,7 +204,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Transport::find($value)->first()->title;
+            $title = Transport::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['include_transport_title'] = $objTitle;
@@ -221,7 +221,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = GuideService::find('id')->first()->title;
+            $title = GuideService::where('id', 'id')->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['include_guide_title'] = $objTitle;
@@ -238,7 +238,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Food::find($value)->first()->title;
+            $title = Food::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['include_food_title'] = $objTitle;
@@ -255,7 +255,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $service = Service::find($value)->first();
+            $service = Service::where('id', $value)->first();
             if ($service)
                 $title = $service->title;
             array_push($objTitle, $title);
@@ -275,7 +275,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Accommodation::find($value)->first()->title;
+            $title = Accommodation::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['include_accommodations_title'] = $objTitle;
@@ -292,7 +292,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Service::find($value)->first()->title;
+            $title = Service::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['ad_service_title'] = $objTitle;
@@ -309,7 +309,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = GuideService::find($value)->first()->title;
+            $title = GuideService::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['ad_guide_title'] = $objTitle;
@@ -326,7 +326,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Food::find($value)->first()->title;
+            $title = Food::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['ad_food_title'] = $objTitle;
@@ -343,7 +343,7 @@ class Tour extends Model
 
         $objTitle = [];
         foreach ($values as $value) {
-            $title = Transport::find($value)->first()->title;
+            $title = Transport::where('id', $value)->first()->title;
             array_push($objTitle, $title);
         }
         return $this->attributes['ad_transport_title'] = $objTitle;

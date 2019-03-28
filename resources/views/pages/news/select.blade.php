@@ -13,7 +13,7 @@
                     {!! $news->description !!}
                 </div>
                 <div class="col-md-4">
-                    <p><b>{{$lang->data->lasted}}</b></p>
+                    <p><b>{{$_lang->data->lasted}}</b></p>
                     @foreach($new_news as $news)
                         <div class="block-news-more row">
                             <div class="col-4 image"
@@ -27,7 +27,7 @@
                                 </p>
                             </div>
                             <div class="col-1 action">
-                                <a href="/{{$lang->title}}/news/{{$news->id}}"><img src="{{asset('./images/arrow-right.svg')}}" alt="" width="100%"></a>
+                                <a href="/{{$_lang->title}}/news/{{$news->id}}/{{$news->url}}"><img src="{{asset('./images/arrow-right.svg')}}" alt="" width="100%"></a>
                             </div>
                         </div>
                     @endforeach

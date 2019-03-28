@@ -8,15 +8,66 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 use Intervention\Image\Facades\Image;
+use Ulyssetour\Content\Guide;
+use Ulyssetour\Content\News;
+use Ulyssetour\Service\Accommodation;
+use Ulyssetour\Service\Food;
+use Ulyssetour\Service\GuideService;
+use Ulyssetour\Service\Transport;
+use Ulyssetour\Setting\Category;
+use Ulyssetour\Setting\City;
+use Ulyssetour\Setting\Language;
+use Ulyssetour\Setting\MetaTag;
+use Ulyssetour\Setting\Season;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-
-//    public $UrlSite = 'https://api.eon.uz';
     public $UrlSite = '';
+
+    public function __construct()
+    {
+    }
+
+    public function updateLanguage($lang, $tour = false)
+    {
+        $languages = Language::all();
+        $language = Language::where('title', $lang)->first();
+        $categories = Category::where('lang', $language->title)->get();
+        $cities = City::where('lang', $language->title)->get();
+        $seasons = Season::where('lang', $language->title)->get();
+
+        $news = News::where('lang', $language->title)->latest()->limit(6)->get();
+        $guides = Guide::where('lang', $language->title)->latest()->limit(6)->get();
+
+        $tags = MetaTag::where('lang', $language->title)->get()->groupBy('url');
+
+        View::share('_lang', $language);
+        View::share('_languages', $languages);
+        View::share('_categories', $categories);
+        View::share('_cities', $cities);
+        View::share('_seasons', $seasons);
+        View::share('_news', $news);
+        View::share('_guides', $guides);
+        View::share('_tags', $tags);
+
+        if ($tour) {
+            $accommodations = Accommodation::where('lang', $lang)->get();
+            $food = Food::where('lang', $lang)->get();
+            $transports = Transport::where('lang', $lang)->get();
+            $guideService = GuideService::where('lang', $lang)->get();
+
+            View::share('_accommodations', $accommodations);
+            View::share('_food', $food);
+            View::share('_transports', $transports);
+            View::share('_guideService', $guideService);
+        }
+    }
+
 
     /******* -----------------  Сохранение картинок ------------------  ******/
 
