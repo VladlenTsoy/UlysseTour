@@ -16,6 +16,9 @@ class Tour extends Model
 {
     //
     protected $fillable = [
+        'meta_title',
+        'meta_description',
+        'url',
         'title',
         'category',
         'duration',

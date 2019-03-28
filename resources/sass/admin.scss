@@ -26,6 +26,44 @@
 }
 
 .sorting_1, .sorting_asc, .sorting_desc {
-  color: #212529!important;
+  color: #212529 !important;
 }
 
+
+/*******/
+.deleteButton {
+  color: #b21f2d;
+  display: inline-block;
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.image-selection {
+  cursor: pointer;
+  display: block;
+  border: 3px dashed #dc3545;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  color: rgba(0, 0, 0, .5);
+}
+
+.out-image {
+  display: block;
+  max-width: 350px
+}
+
+.image-selection.success {
+  border-color: #28a745;
+}
+
+.hideme {
+  display: none;
+}
+
+.block-map {
+  width: 100%;
+  margin: 1rem 0;
+  background: #ccc;
+  height: 350px
+}
