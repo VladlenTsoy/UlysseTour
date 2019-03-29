@@ -25,13 +25,11 @@ class TourController extends Controller
         // Вывод тегов
         $tag = MetaTag::where(['url' => "tours-" . $search['country'], 'lang' => $language->title])->first();
 
-        $setting['slide_img'] = $request->get('country') == 0 ? '../files/tour.png' : '../files/c-asia.png';
-
         $setting = [
             'title' => $tag->title,
             'description' => $tag->description,
             'request_tour' => $request->has('country'),
-            'slide_img' => $search['country'] == 0 ? '../files/tour.png' : '../files/c-asia.png',
+            'slide_img' => $search['country'] == 0 ? '/files/tour.png' : '/files/c-asia.png',
             'slide_title' => $language->data->country[$search['country']],
             'slide_desc' => $language->data->tours
         ];

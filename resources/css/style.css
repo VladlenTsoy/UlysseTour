@@ -419,8 +419,12 @@ a {
     box-shadow: 10px 10px 20px 5px rgba(40, 100, 163, .15)
 }
 
+.block-tour.index .image {
+    height: 135px
+}
+
 .block-tour .image {
-    height: 115px
+    height: 108px
 }
 
 .block-tour .title {
@@ -443,7 +447,7 @@ a {
 }
 
 .block-tour .action {
-    padding: 0 10px 5px 0
+    padding: 0 10px 25px 0
 }
 
 .block-pluses {
@@ -849,8 +853,12 @@ a {
         overflow: hidden
     }
 
+    .block-tour.index .image {
+        height: 147px
+    }
+
     .block-tour .image {
-        height: 137px
+        height: 127px
     }
 
     .block-news-once .hot-offers-title {

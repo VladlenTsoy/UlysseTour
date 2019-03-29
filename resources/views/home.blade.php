@@ -80,8 +80,10 @@
                 <div class="col-lg-2">
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="join_the_group" name="join_the_group" value="1">
-                            <label class="custom-control-label" for="join_the_group">{{$_lang->data->join_the_group}}</label>
+                            <input type="checkbox" class="custom-control-input" id="join_the_group"
+                                   name="join_the_group" value="1">
+                            <label class="custom-control-label"
+                                   for="join_the_group">{{$_lang->data->join_the_group}}</label>
                         </div>
                     </div>
                 </div>
@@ -152,14 +154,15 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-1'][0]->user_url}}?country=1" class=" title-block">
+                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-1'][0]->user_url}}?country=1"
+                                   class=" title-block">
                                     <span class="sub">{{$_lang->data->tours}}</span>
                                     <span class="title">{{$_lang->data->inUzbekistan}}</span>
                                 </a>
                             </div>
 
                             @foreach($uzTours as $tour)
-                                <div class="block-tour row align-items-end">
+                                <div class="block-tour index row align-items-end">
                                     <div class="col-4 image"
                                          style="background: var(--greyColor) url({{asset($tour->image)}}) center no-repeat;
                                                  background-size: cover;"
@@ -180,6 +183,7 @@
                                                         class="blackColor">{{$tour->season_title}}</span></p>
                                             <p>{{$_lang->data->durations}}: <span
                                                         class="blackColor">{{$tour->duration}}</span></p>
+                                            <p>&nbsp;</p>
                                         </div>
                                     </div>
                                     <div class="col-1 action">
@@ -194,14 +198,15 @@
 
                         <div class="row">
                             <div class="col-12">
-                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-0'][0]->user_url}}?country=0" class=" title-block text-right">
+                                <a href="/{{$_lang->title}}/tours/{{$_tags['tours-0'][0]->user_url}}?country=0"
+                                   class=" title-block text-right">
                                     <span class="sub">{{$_lang->data->tours}}</span>
                                     <span class="title">{{$_lang->data->inCentralAsia}}</span>
                                 </a>
                             </div>
 
                             @foreach($sATours as $tour)
-                                <div class="block-tour row align-items-end">
+                                <div class="block-tour index row align-items-end">
                                     <div class="col-4 image"
                                          style="background: var(--greyColor) url({{asset($tour->image)}}) center no-repeat;
                                                  background-size: cover;"
@@ -218,9 +223,15 @@
                                                     @endforeach
                                                 </span>
                                             </p>
-                                            <p>Сезон: <span class="blackColor">{{$tour->season_title}}</span></p>
-                                            <p>Продолжительность: <span
-                                                        class="blackColor">{{$tour->duration_title}}</span></p>
+                                            <p>{{$_lang->data->season}}: <span
+                                                        class="blackColor">{{$tour->season_title}}</span></p>
+                                            @if($tour->duration_title)
+                                                <p>{{$_lang->data->durations}}: <span
+                                                            class="blackColor">{{$tour->duration_title}}</span></p>
+                                            @else
+                                                <p>&nbsp;</p>
+                                            @endif
+                                            <p>&nbsp;</p>
                                         </div>
                                     </div>
                                     <div class="col-1 action">

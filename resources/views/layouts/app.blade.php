@@ -261,7 +261,7 @@
     <div class="row">
         <div class="col-md-6 order-md-1 order-2">
             <p class="copyright">
-                2018 © Ulysse Tour. All rights reserved. Design and development by <a
+                {{date('Y')}} © ULYSSE TOUR Travel Agency. All rights reserved. <br>Design and development by <a
                         href="https://limitless.uz"
                         target="_blank">Limitless</a>.
             </p>
