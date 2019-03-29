@@ -1,5 +1,9 @@
 /node_modules
 /public/hot
+/public/images/ckeditor
+/public/images/banner
+/public/images/tours
+/public/images/news
 /public/storage
 /storage/*.key
 /vendor
