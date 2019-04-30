@@ -22,7 +22,25 @@ class MetatagController extends Controller
     public function сreate($lang)
     {
         $tags = MetaTag::where('lang', $lang)->get();
-        return view('admin.tag.create', ['tags' => $tags]);
+        $deftags = MetaTag::where('lang', 'ru')->whereNotIn('url', $tags->pluck('url'))->get();
+        if ($deftags->count())
+            return view('admin.tag.create', ['tags' => $tags, 'deftags' => $deftags, 'lang' => $lang]);
+        else
+            return redirect()->intended('/admin/tags');
+    }
+
+    //
+    public function creating($lang, Request $request)
+    {
+        $data = $request->all();
+        MetaTag::create([
+            'url' => $data['url'],
+            'title' => $data['title'],
+            'user_url' => $data['user_url'],
+            'description' => $data['description'],
+            'lang' => $lang,
+        ]);
+        return redirect()->intended('/admin/tags');
     }
 
     //

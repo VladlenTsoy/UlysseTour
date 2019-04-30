@@ -9,7 +9,7 @@
                 <p><b>Основные</b></p>
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Туры</h5>
@@ -18,7 +18,16 @@
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Вертолетные</h5>
+                        <a href="/admin/helicopters" class="btn btn-block btn-primary">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3">
                 <div class="card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Новости</h5>
@@ -27,7 +36,7 @@
                 </div>
             </div>
 
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Путеводитель</h5>

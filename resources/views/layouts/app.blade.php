@@ -82,12 +82,19 @@
             </div>
             <div class="ml-auto navbar-collapse collapse nav-content">
                 <ul class="ml-auto nav navbar-nav text-nowrap flex-row ">
-                    @foreach($_languages as $val)
-                        <li class="nav-item">
-                            <a class="nav-link @if($val->title === $_lang->title) active @endif"
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{$_lang->title}}
+                        </a>
+                        <div class="dropdown-menu nav-dropdown" aria-labelledby="navbarDropdown">
+                            @foreach($_languages as $val)
+                            <a class="dropdown-item @if($val->title === $_lang->title) active @endif"
                                href="/{{$val->title}}">{{$val->title}}</a>
-                        </li>
-                    @endforeach
+                            @endforeach
+                        </div>
+                    </li>
+
                 </ul>
             </div>
         </div>

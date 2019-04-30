@@ -27,7 +27,6 @@ class NewsController extends Controller
         return view('pages.news.all', ['news' => $news, 'setting' => $setting]);
     }
 
-
     // Вывод ноаости по id
     public function getByID($lang, $id)
     {
@@ -39,7 +38,7 @@ class NewsController extends Controller
         $setting = [
             'title' => $news->meta_title,
             'description' => $news->meta_description,
-            'slide_title' => $language->news,
+            'slide_title' => $language->data->news,
             'slide_desc' => '',
             'slide_img' => $news->image,
         ];

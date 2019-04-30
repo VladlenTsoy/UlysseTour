@@ -28,6 +28,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/tour/{id}/edit/{lang}', 'Admin\TourController@tourEditById')->where('id', '[0-9]+');
     Route::get('/tour/{id}/delete/{lang}', 'Admin\TourController@tourDeleteById')->where('id', '[0-9]+');
 
+    Route::get('/helicopters', 'Admin\HelicopterController@all');
+
+    Route::get('/helicopter/create', 'Admin\HelicopterController@helicopterCreate');
+    Route::post('/helicopter/create', 'Admin\HelicopterController@helicopterCreating');
+    Route::get('/helicopter/{id}', 'Admin\HelicopterController@helicopterGetById')->where('id', '[0-9]+');
+    Route::post('/helicopter/{id}/edit', 'Admin\HelicopterController@helicopterEditById')->where('id', '[0-9]+');
+    Route::get('/helicopter/{id}/delete', 'Admin\HelicopterController@helicopterDeleteById')->where('id', '[0-9]+');
+
 
     Route::get('/news', 'Admin\NewsController@news');
 
@@ -72,8 +80,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('/tags', 'Admin\MetatagController@all');
     Route::get('/tag/create/{lang}', 'Admin\MetatagController@сreate');
+    Route::post('/tag/{lang}', 'Admin\MetatagController@creating')->where('lang', '[A-z]+');
     Route::get('/tag/{id}', 'Admin\MetatagController@getById');
-    Route::post('/tag/{id}', 'Admin\MetatagController@editById');
+    Route::post('/tag/{id}', 'Admin\MetatagController@editById')->where('id', '[0-9]+');
 
 
     Route::get('/{table}', 'Admin\SubController@selectAllTable');

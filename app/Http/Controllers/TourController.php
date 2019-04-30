@@ -119,7 +119,7 @@ class TourController extends Controller
 
         $setting = [
             'title' => $tour->meta_title,
-            'description' => $tour->meta_discription,
+            'description' => $tour->meta_description,
             'slide_title' => $tour->title,
             'slide_desc' => '',
             'slide_img' => $tour->image,
@@ -232,7 +232,7 @@ class TourController extends Controller
 
         $setting = [
             'title' => $tour->meat_title,
-            'description' => $tour->meat_description,
+            'description' => $tour->meta_description,
             'slide_title' => $tour->title,
             'slide_desc' => '',
             'slide_img' => $tour->image,

@@ -20,5 +20,8 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        '/admin/load/image',
+        '/book_it/send_mail_message/tour',
+        '/book_it/send_mail_message/create_tour'
     ];
 }
