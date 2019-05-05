@@ -4,6 +4,8 @@ namespace Ulyssetour\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Ulyssetour\Content\Charter;
+use Ulyssetour\Content\Helicopter;
 use Ulyssetour\Content\Tour;
 use Ulyssetour\Service\Food;
 use Ulyssetour\Service\GuideService;
@@ -17,7 +19,7 @@ class TourController extends Controller
     {
         $this->updateLanguage($lang, true);
         $language = Language::where('title', $lang)->first();
-        $search = ['lang' => $language->title, 'hot' => null, 'country' => 0];
+        $search = ['lang' => $language->title, 'hot' => null, 'country' => 0, 'helicopter' => 0];
 
         // Получения атр
         $search['country'] = $request->has('country') ? $request->get('country') : 0;
@@ -137,7 +139,6 @@ class TourController extends Controller
         ]);
     }
 
-
     //
     public function hotTours(Request $request, $lang)
     {
@@ -246,6 +247,86 @@ class TourController extends Controller
             'food' => $food,
             'food_sub' => $food_sub,
             'guideService' => $guideService,
+            'setting' => $setting,
+        ]);
+    }
+
+    //
+    public function helinatureTours(Request $request, $lang)
+    {
+        $this->updateLanguage($lang, true);
+        $language = Language::where('title', $lang)->first();
+        $search = ['lang' => $language->title, 'hot' => null, 'helicopter' => 1];
+        $helicopters = Helicopter::where('lang', $language->title)->get();
+
+        // Вывод тегов
+        $tag = MetaTag::where(['url' => "helinature", 'lang' => $language->title])->first();
+
+        $setting = [
+            'title' => $tag->title,
+            'description' => $tag->description,
+            'request_tour' => $request->has('country'),
+            'slide_img' => '/images/banner/hot-tour.png',
+            'slide_title' => $language->data->helinature,
+            'slide_desc' => $language->data->tours
+        ];
+
+        $tours = Tour::where($search)->latest()->get();
+
+        return view('pages.tours.all', [
+            'tours' => $tours,
+            'helinature' => true,
+            'helicopters' => $helicopters,
+            'setting' => $setting,
+        ]);
+    }
+
+    //
+    public function heliskiTours($lang)
+    {
+        $this->updateLanguage($lang);
+        $language = Language::where('title', $lang)->first();
+
+        // Вывод тегов
+        $tag = MetaTag::where(['url' => "heliski", 'lang' => $language->title])->first();
+
+        $setting = [
+            'title' => $tag->title,
+            'description' => $tag->description,
+            'text' => $language->data->heliski_text,
+            'slide_img' => '/files/c-asia.png',
+            'slide_title' => $language->data->heliski,
+            'slide_desc' => $language->data->tours
+        ];
+
+        return view('pages.tours.heliski', [
+            'lang' => $lang,
+            'setting' => $setting,
+        ]);
+    }
+
+    //
+    public function businessFlyTours($lang)
+    {
+        $this->updateLanguage($lang);
+        $language = Language::where('title', $lang)->first();
+        $charters = Charter::where('lang', $language->title)->get();
+
+        // Вывод тегов
+        $tag = MetaTag::where(['url' => "business_fly", 'lang' => $language->title])->first();
+
+
+        $setting = [
+            'title' => $tag->title,
+            'description' => $tag->description,
+            'slide_img' => '/files/c-asia.png',
+            'slide_title' => $language->data->business_fly,
+            'slide_desc' => $language->data->tours
+        ];
+
+        return view('pages.tours.business_fly', [
+            'lang' => $lang,
+            'charters' => $charters,
             'setting' => $setting,
         ]);
     }

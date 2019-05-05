@@ -364,6 +364,13 @@
                                             <span class="" style="padding-left: 1.5rem">Груповой тур</span>
                                         </label>
                                     </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2" name="helicopter" value="1" @if($tour->helicopter) checked @endif>
+                                        <label class="custom-control-label" for="customCheck2">
+                                            <span class="" style="padding-left: 1.5rem">Вертолетный тур</span>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">

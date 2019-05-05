@@ -40,7 +40,7 @@ class GuideController extends Controller
             'description' => $guide->meta_description,
             'slide_title' => $language->data->guide,
             'slide_desc' => '',
-            'slide_img' => '../../images/banner/guide.png',
+            'slide_img' => '/images/banner/guide.png',
         ];
 
         return view('pages.guides.select', ['guide' => $guide, 'setting' => $setting]);

@@ -18,7 +18,7 @@ class HomeController extends Controller
         $banners = Banner::where('lang', $language->title)->get();
         $sATours = Tour::where(['lang' => $language->title, 'country' => 0, 'hot' => null])->latest()->limit(3)->get();
         $uzTours = Tour::where(['lang' => $language->title, 'country' => 1, 'hot' => null])->latest()->limit(3)->get();
-        $hotTours = Tour::where([['lang', '=', $language->title], ['hot', '>', date("Y-m-d")]])->latest()->get();
+        $hotTours = Tour::where([['lang', '=', $language->title], ['hot', '>', date("Y-m-d")]])->orderBy('hot')->get();
 
         $setting = [
             'title' => $language->data->title_site,

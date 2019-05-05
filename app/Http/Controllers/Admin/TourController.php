@@ -112,6 +112,7 @@ class TourController extends Controller
         $saveObj['country'] = ((int)$request->get('country'));
         $saveObj['lang'] = $lang;
         $saveObj['join_group'] = $request->has('join_group') ? $request->get('join_group') : null;
+        $saveObj['helicopter'] = $request->has('helicopter') ? $request->get('helicopter') : 0;
 
         $tourId = Tour::create($saveObj)->id;
 
@@ -177,6 +178,7 @@ class TourController extends Controller
         ]);
     }
 
+    /** **/
     public function tourEditById(Request $request, $id, $lang)
     {
         $saveObj = [];
@@ -232,6 +234,7 @@ class TourController extends Controller
         $saveObj['country'] = (int)$request->get('country');
         $saveObj['lang'] = $lang;
         $saveObj['join_group'] = $request->has('join_group') ? $request->get('join_group') : null;
+        $saveObj['helicopter'] = $request->has('helicopter') ? $request->get('helicopter') : 0;
 
         if ($request->has('image')) {
             $this->deleteFiles($id, 'tours', 'image');

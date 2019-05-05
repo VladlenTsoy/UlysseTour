@@ -23,6 +23,56 @@ $(document).ready(function () {
                 }
             }).catch(error => console.error(error));
 
+    if ($('#heliski_text', document).length)
+        ClassicEditor
+            .create(document.querySelector('#heliski_text'), {
+                ckfinder: {
+                    uploadUrl: '/admin/load/image'
+                },
+                image: {
+                    toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
+                    styles: ['full', 'alignLeft', 'alignRight', 'alignCenter']
+                }
+            }).catch(error => console.error(error));
+
+    if ($('#business_fly_text', document).length)
+        ClassicEditor
+            .create(document.querySelector('#business_fly_text'), {
+                ckfinder: {
+                    uploadUrl: '/admin/load/image'
+                },
+                image: {
+                    toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
+                    styles: ['full', 'alignLeft', 'alignRight', 'alignCenter']
+                }
+            }).catch(error => console.error(error));
+
+
+    if ($('#helinature_text', document).length)
+        ClassicEditor
+            .create(document.querySelector('#helinature_text'), {
+                ckfinder: {
+                    uploadUrl: '/admin/load/image'
+                },
+                image: {
+                    toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
+                    styles: ['full', 'alignLeft', 'alignRight', 'alignCenter']
+                }
+            }).catch(error => console.error(error));
+
+
+    if ($('#heliski_description', document).length)
+        ClassicEditor
+            .create(document.querySelector('#heliski_description'), {
+                ckfinder: {
+                    uploadUrl: '/admin/load/image'
+                },
+                image: {
+                    toolbar: ['imageTextAlternative', '|', 'imageStyle:alignLeft', 'imageStyle:full', 'imageStyle:alignRight'],
+                    styles: ['full', 'alignLeft', 'alignRight', 'alignCenter']
+                }
+            }).catch(error => console.error(error));
+
     //
     if ($('#conditions', document).length)
         ClassicEditor

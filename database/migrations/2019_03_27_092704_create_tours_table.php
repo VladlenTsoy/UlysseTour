@@ -41,6 +41,7 @@ class CreateToursTable extends Migration
             $table->text('route')->nullable();
             $table->text('country')->nullable();
             $table->integer('join_group')->nullable();
+            $table->integer('helicopter')->default(0);
             $table->text('include_accommodations')->nullable();
             $table->date('hot')->nullable();
             $table->string('lang')->nullable();

@@ -9,6 +9,7 @@ class Helicopter extends Model
     //
     protected $fillable = [
         //
+        'category',
         'date',
         'title',
         'cost',

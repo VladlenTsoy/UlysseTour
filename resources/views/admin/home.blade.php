@@ -21,7 +21,7 @@
             <div class="col-3">
                 <div class="card">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Вертолетные</h5>
+                        <h5 class="card-title">Расписание</h5>
                         <a href="/admin/helicopters" class="btn btn-block btn-primary">Посмотреть</a>
                     </div>
                 </div>
@@ -41,6 +41,17 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Путеводитель</h5>
                         <a href="/admin/guides" class="btn btn-block btn-primary">Посмотреть</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12"><br></div>
+
+            <div class="col-3">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Чартеры</h5>
+                        <a href="/admin/charters" class="btn btn-block btn-primary">Посмотреть</a>
                     </div>
                 </div>
             </div>

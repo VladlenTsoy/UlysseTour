@@ -48,4 +48,11 @@ class HelicopterController extends Controller
         Helicopter::find($id)->update($request->all());
         return redirect()->intended('/admin/helicopters');
     }
+
+    //
+    public function helicopterDeleteById($id)
+    {
+        Helicopter::find($id)->delete();
+        return redirect()->intended('/admin/helicopters');
+    }
 }

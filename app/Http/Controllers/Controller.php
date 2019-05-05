@@ -37,8 +37,8 @@ class Controller extends BaseController
     {
         $languages = Language::all();
         $language = Language::where('title', $lang)->first();
-        $categories = Category::where('lang', $language->title)->get();
-        $cities = City::where('lang', $language->title)->get();
+        $categories = Category::where('lang', $language->title)->orderBy('title')->get();
+        $cities = City::where('lang', $language->title)->orderBy('title')->get();
         $seasons = Season::where('lang', $language->title)->get();
 
         $news = News::where('lang', $language->title)->latest()->limit(6)->get();

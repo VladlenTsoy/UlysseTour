@@ -11,14 +11,15 @@
                             {!! csrf_field() !!}
 
                             <div class="row">
-                                @foreach($languages->data as $key => $item)
-                                    @if($key !== 'aboutus' && $key !== 'pluses')
+                                @foreach($def_language->data as $key => $item)
+                                    @if($key !== 'aboutus' && $key !== 'pluses' && $key !== 'heliski_description' && $key !== 'business_fly_text' && $key !== 'heliski_text'&& $key !== 'helinature_text')
                                         @if(gettype($item) === 'string')
                                             <div class="col-md-6">
                                                 <div class="form-group">
                                                     <label for="key_{{$key}}">{{$item}}</label>
                                                     <input type="text" class="form-control" id="key_{{$key}}"
-                                                           name="{{$key}}" required value="{{$item}}">
+                                                           name="{{$key}}" required
+                                                           value="{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}">
                                                 </div>
                                             </div>
                                         @endif
@@ -43,6 +44,43 @@
                                                           name="{{$key}}">{{$item}}</textarea>
                                             </div>
                                         </div>
+
+                                    @elseif($key === 'helinature_text')
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="helinature_text">Вертолетные туры</label>
+                                                <textarea class="form-control" id="helinature_text"
+                                                          name="{{$key}}">{{$item}}</textarea>
+                                            </div>
+                                        </div>
+
+                                    @elseif($key === 'business_fly_text')
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="business_fly_text">Чартеры</label>
+                                                <textarea class="form-control" id="business_fly_text"
+                                                          name="{{$key}}">{{$item}}</textarea>
+                                            </div>
+                                        </div>
+
+                                    @elseif($key === 'heliski_text')
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="heliski_text">Хелиски Описание (Слева)</label>
+                                                <textarea class="form-control" id="heliski_text"
+                                                          name="{{$key}}">{{$item}}</textarea>
+                                            </div>
+                                        </div>
+
+                                    @elseif($key === 'heliski_description')
+                                        <div class="col-12">
+                                            <div class="form-group">
+                                                <label for="heliski_description">Хелиски Иформация</label>
+                                                <textarea class="form-control" id="heliski_description"
+                                                          name="{{$key}}">{{$item}}</textarea>
+                                            </div>
+                                        </div>
+
                                     @elseif($key === 'pluses')
                                         @foreach($item as $key_pluses => $val)
                                             <div class="col-md-6">
@@ -74,7 +112,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <button type="submit" class="btn btn-primary">Изменить</button>
                         </form>
 

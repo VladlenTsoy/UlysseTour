@@ -41,6 +41,7 @@ class Tour extends Model
         'route',
         'conditions',
         'country',
+        'helicopter',
         'image',
         'hot',
         'join_group',
@@ -186,7 +187,8 @@ class Tour extends Model
 
         foreach ($cities as $city) {
             $cityDB = City::where('id', $city)->first();
-            array_push($cities_title, $cityDB->title);
+            if ($cityDB)
+                array_push($cities_title, $cityDB->title);
         }
 
         return $this->attributes['city_title'] = $cities_title;

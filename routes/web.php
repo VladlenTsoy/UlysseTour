@@ -1,4 +1,5 @@
 <?php
+Route::get('/language', 'Admin\LanguageController@default');
 
 Route::get('/', 'HomeController@index');
 Route::get('/{lang?}', 'HomeController@index')->where('lang', '\w{2}');
@@ -28,6 +29,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::post('/tour/{id}/edit/{lang}', 'Admin\TourController@tourEditById')->where('id', '[0-9]+');
     Route::get('/tour/{id}/delete/{lang}', 'Admin\TourController@tourDeleteById')->where('id', '[0-9]+');
 
+
     Route::get('/helicopters', 'Admin\HelicopterController@all');
 
     Route::get('/helicopter/create', 'Admin\HelicopterController@helicopterCreate');
@@ -35,6 +37,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/helicopter/{id}', 'Admin\HelicopterController@helicopterGetById')->where('id', '[0-9]+');
     Route::post('/helicopter/{id}/edit', 'Admin\HelicopterController@helicopterEditById')->where('id', '[0-9]+');
     Route::get('/helicopter/{id}/delete', 'Admin\HelicopterController@helicopterDeleteById')->where('id', '[0-9]+');
+
+
+    Route::get('/charters', 'Admin\CharterController@all');
+
+    Route::get('/charter/create', 'Admin\CharterController@charterCreate');
+    Route::post('/charter/create', 'Admin\CharterController@charterCreating');
+    Route::get('/charter/{id}', 'Admin\CharterController@charterGetById')->where('id', '[0-9]+');
+    Route::post('/charter/{id}/edit', 'Admin\CharterController@charterEditById')->where('id', '[0-9]+');
+    Route::get('/charter/{id}/delete', 'Admin\CharterController@charterDeleteById')->where('id', '[0-9]+');
 
 
     Route::get('/news', 'Admin\NewsController@news');
@@ -102,6 +113,12 @@ Route::post('/schedule', ['as' => 'id', 'uses' => 'SettingController@scheduleApi
 
 Route::get('/{lang}/tour/{id}/{title?}', 'TourController@getByID')->where('id', '[0-9]+');
 Route::get('/{lang}/tours/{title?}', 'TourController@all');
+
+//
+// Route::get('/{lang}/helinature/{id}/{title?}', 'TourController@hotTourGetByID')->where('id', '[0-9]+');
+Route::get('/{lang}/helinature/{title?}', 'TourController@helinatureTours');
+Route::get('/{lang}/heliski/{title?}', 'TourController@heliskiTours');
+Route::get('/{lang}/business_fly/{title?}', 'TourController@businessFlyTours');
 
 //
 Route::get('/{lang}/hot-tour/{id}/{title?}', 'TourController@hotTourGetByID')->where('id', '[0-9]+');

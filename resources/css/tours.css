@@ -34,3 +34,20 @@
 .select2-container--default.select2-container--focus .select2-selection--multiple:focus {
     border-bottom: 2px solid var(--mainColor)
 }
+
+
+
+/********************* Helicopter ***************************/
+.table-helicopter{
+    margin: 0;
+}
+
+.table-helicopter .thead-dark th{
+    background: var(--mainColor);
+    border-color: var(--mainColor);
+    text-align: center;
+}
+
+.table-helicopter td {
+    text-align: center;
+}

@@ -53,11 +53,13 @@ class LanguageController extends Controller
     public function languageGetById($id)
     {
         $langs = Language::all();
+        $def_language = Language::find(1);
         $languages = Language::find($id);
 
         return view('admin.languages.edit', [
             'id' => $id,
             'languages' => $languages,
+            'def_language' => $def_language,
             'lang' => $langs
         ]);
     }
@@ -94,5 +96,14 @@ class LanguageController extends Controller
     {
         Language::find($id)->delete();
         return redirect()->intended('/admin/languages');
+    }
+
+    /*
+     *
+     */
+    public function default()
+    {
+        $lang = Language::def();
+        return response()->json($lang);
     }
 }

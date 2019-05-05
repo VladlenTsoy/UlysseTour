@@ -13,6 +13,13 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+{{--                                    <div class="form-group">--}}
+{{--                                        <label for="category">Категория</label>--}}
+{{--                                        <select class="form-control" name="category" id="category" required>--}}
+{{--                                            <option value="0" @if(0 === $helicopter->category) selected @endif>Heliski</option>--}}
+{{--                                            <option value="1" @if(1 === $helicopter->category) selected @endif>Business fly</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                     <div class="form-group">
                                         <label for="date">Дата</label>
                                         <input type="date" class="form-control" id="date" name="date" value="{{$helicopter->date}}" required>
@@ -20,15 +27,6 @@
                                     <div class="form-group">
                                         <label for="cost">Стоимость</label>
                                         <input type="text" class="form-control" id="cost" name="cost" value="{{$helicopter->cost}}" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="lang">Язык</label>
-                                        <select class="form-control" name="lang" id="lang" required>
-                                            @foreach($lang as $item)
-                                                <option value="{{$item->title}}"
-                                                        @if($item->title === $helicopter->lang) selected @endif>{{$item->title}}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -45,6 +43,16 @@
                                         <input type="number" class="form-control" id="max_qty_tourists" value="{{$helicopter->max_qty_tourists}}" name="max_qty_tourists" required>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="lang">Язык</label>
+                                <select class="form-control" name="lang" id="lang" required>
+                                    @foreach($lang as $item)
+                                        <option value="{{$item->title}}"
+                                                @if($item->title === $helicopter->lang) selected @endif>{{$item->title}}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <button type="submit" class="btn btn-primary">Изменить</button>

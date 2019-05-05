@@ -50,9 +50,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/{{$_lang->title}}#home">{{$_lang->data->main}}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                           href="/{{$_lang->title}}/hot-tours/{{$_tags['hot-tours'][0]->user_url}}">{{$_lang->data->hot_tours}}</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{$_lang->data->helicopter}}
+                        </a>
+                        <div class="dropdown-menu nav-dropdown" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item"
+                               href="/{{$_lang->title}}/helinature/{{$_tags['helinature'][0]->user_url}}">{{$_lang->data->helinature}}</a>
+                            <a class="dropdown-item"
+                               href="/{{$_lang->title}}/heliski/{{$_tags['heliski'][0]->user_url}}">{{$_lang->data->heliski}}</a>
+                            <a class="dropdown-item"
+                               href="/{{$_lang->title}}/business_fly/{{$_tags['business_fly'][0]->user_url}}">{{$_lang->data->business_fly}}</a>
+                        </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -70,10 +80,12 @@
                         <a class="nav-link" href="/{{$_lang->title}}#about-us">{{$_lang->data->about_us}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/{{$_lang->title}}/news/{{$_tags['news'][0]->user_url}}">{{$_lang->data->news}}</a>
+                        <a class="nav-link"
+                           href="/{{$_lang->title}}/news/{{$_tags['news'][0]->user_url}}">{{$_lang->data->news}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/{{$_lang->title}}/guide/{{$_tags['guides'][0]->user_url}}">{{$_lang->data->guide}}</a>
+                        <a class="nav-link"
+                           href="/{{$_lang->title}}/guide/{{$_tags['guides'][0]->user_url}}">{{$_lang->data->guide}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/{{$_lang->title}}#contacts">{{$_lang->data->contacts}}</a>
@@ -89,8 +101,8 @@
                         </a>
                         <div class="dropdown-menu nav-dropdown" aria-labelledby="navbarDropdown">
                             @foreach($_languages as $val)
-                            <a class="dropdown-item @if($val->title === $_lang->title) active @endif"
-                               href="/{{$val->title}}">{{$val->title}}</a>
+                                <a class="dropdown-item @if($val->title === $_lang->title) active @endif"
+                                   href="/{{$val->title}}">{{$val->title}}</a>
                             @endforeach
                         </div>
                     </li>
@@ -143,7 +155,8 @@
                                 </p>
                             </div>
                             <div class="col-12">
-                                <a href="/{{$_lang->title}}/guide/{{$guide->id}}/{{$guide->url}}" class="btn btn-primary">
+                                <a href="/{{$_lang->title}}/guide/{{$guide->id}}/{{$guide->url}}"
+                                   class="btn btn-primary">
                                     {{$_lang->data->read_more}}
                                 </a>
                             </div>

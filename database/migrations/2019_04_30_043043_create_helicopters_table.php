@@ -15,6 +15,7 @@ class CreateHelicoptersTable extends Migration
     {
         Schema::create('helicopters', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('category')->nullable();
             $table->date('date')->nullable();
             $table->string('title')->nullable();
             $table->string('cost')->nullable();

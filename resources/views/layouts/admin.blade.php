@@ -40,7 +40,10 @@
                             <a class="nav-link" href="{{url('/admin/tours')}}">{{ __('Туры') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/admin/helicopters')}}">{{ __('Вертолеты') }}</a>
+                            <a class="nav-link" href="{{url('/admin/helicopters')}}">{{ __('Расписание') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{url('/admin/charters')}}">{{ __('Чартеры') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/admin/news')}}">{{ __('Новости') }}</a>

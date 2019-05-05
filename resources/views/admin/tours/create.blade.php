@@ -283,6 +283,14 @@
                                             <span class="" style="padding-left: 1.5rem">Груповой тур</span>
                                         </label>
                                     </div>
+
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1"
+                                               name="helicopter" value="1">
+                                        <label class="custom-control-label" for="customCheck1">
+                                            <span class="" style="padding-left: 1.5rem">Вертолетный тур</span>
+                                        </label>
+                                    </div>
                                 </div>
 
                                 <div class="col-md-6">

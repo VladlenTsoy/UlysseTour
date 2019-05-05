@@ -47,11 +47,13 @@
                     </table>
 
                     <div class="block-btn-cost row">
-                        <div class="col-md-6 text-right">
-                            <button class="btn btn-warning" data-toggle="modal" data-target="#modalSchedule">
-                                <i class="fa fa-plane"></i> {{$_lang->data->schedule}}
-                            </button>
-                        </div>
+                        @if($tour->helicopter === 0)
+                            <div class="col-md-6 text-right">
+                                <button class="btn btn-warning" data-toggle="modal" data-target="#modalSchedule">
+                                    <i class="fa fa-plane"></i> {{$_lang->data->schedule}}
+                                </button>
+                            </div>
+                        @endif
                         <div class="col-md-6">
                             <button class="btn btn-primary" data-toggle="modal"
                                     data-target="#modalBookIt">{{$_lang->data->book_it}}</button>
@@ -234,7 +236,8 @@
                     @endforeach
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$_lang->data->close}}</button>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{$_lang->data->close}}</button>
                     {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
                 </div>
             </div>
@@ -260,7 +263,8 @@
                     @endforeach
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$_lang->data->close}}</button>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{$_lang->data->close}}</button>
                     {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
                 </div>
             </div>
@@ -286,7 +290,8 @@
                     @endforeach
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$_lang->data->close}}</button>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{$_lang->data->close}}</button>
                     {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
                 </div>
             </div>
@@ -312,7 +317,8 @@
                     @endforeach
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$_lang->data->close}}</button>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{$_lang->data->close}}</button>
                     {{--<button type="button" class="btn btn-primary">Save changes</button>--}}
                 </div>
             </div>
@@ -763,7 +769,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">{{$_lang->data->close}}</button>
+                    <button type="button" class="btn btn-secondary"
+                            data-dismiss="modal">{{$_lang->data->close}}</button>
                 </div>
             </div>
         </div>
