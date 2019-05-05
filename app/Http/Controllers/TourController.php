@@ -27,6 +27,9 @@ class TourController extends Controller
         // Вывод тегов
         $tag = MetaTag::where(['url' => "tours-" . $search['country'], 'lang' => $language->title])->first();
 
+        if(!$tag)
+            $tag = MetaTag::where(['url' => "tours-" . $search['country'], 'lang' => 'ru'])->first();
+
         $setting = [
             'title' => $tag->title,
             'description' => $tag->description,
@@ -261,6 +264,8 @@ class TourController extends Controller
 
         // Вывод тегов
         $tag = MetaTag::where(['url' => "helinature", 'lang' => $language->title])->first();
+        if(!$tag)
+            $tag = MetaTag::where(['url' => "helinature", 'lang' => 'ru'])->first();
 
         $setting = [
             'title' => $tag->title,
@@ -289,6 +294,8 @@ class TourController extends Controller
 
         // Вывод тегов
         $tag = MetaTag::where(['url' => "heliski", 'lang' => $language->title])->first();
+        if(!$tag)
+            $tag = MetaTag::where(['url' => "heliski", 'lang' => 'ru'])->first();
 
         $setting = [
             'title' => $tag->title,
@@ -314,7 +321,8 @@ class TourController extends Controller
 
         // Вывод тегов
         $tag = MetaTag::where(['url' => "business_fly", 'lang' => $language->title])->first();
-
+        if(!$tag)
+            $tag = MetaTag::where(['url' => "business_fly", 'lang' => 'ru'])->first();
 
         $setting = [
             'title' => $tag->title,

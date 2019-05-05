@@ -3,6 +3,7 @@
 namespace Ulyssetour\Setting;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Language extends Model
 {
@@ -12,10 +13,19 @@ class Language extends Model
 
     public function getDataAttribute($value)
     {
+        $data_def = DB::table('languages')->where('title', 'ru')->first();
+        $data_def = json_decode($data_def->data);
+
         if (gettype($value) === "string")
-            return $this->attributes['data'] = json_decode($value);
+            $data_current = $this->attributes['data'] = json_decode($value);
         else
-            return $value;
+            $data_current = $value;
+
+        $data = [];
+        foreach ($data_def as $key => $item)
+            $data[$key] = isset($data_current->{$key}) ? $data_current->{$key} : $item;
+
+        return (object) $data;
     }
 
 

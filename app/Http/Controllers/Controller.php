@@ -44,7 +44,12 @@ class Controller extends BaseController
         $news = News::where('lang', $language->title)->latest()->limit(6)->get();
         $guides = Guide::where('lang', $language->title)->latest()->limit(6)->get();
 
-        $tags = MetaTag::where('lang', $language->title)->get()->groupBy('url');
+        $tags = [];
+        $tags_def = MetaTag::where('lang', 'ru')->get()->groupBy('url');
+        $tags_current = MetaTag::where('lang', $language->title)->get()->groupBy('url');
+
+        foreach ($tags_def as $key => $item)
+            $tags[$key] = isset($tags_def->{$key}) ? $tags_current->{$key} : $item;
 
         View::share('_lang', $language);
         View::share('_languages', $languages);
