@@ -107,7 +107,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 
 Route::post('/book_it/send_mail_message/tour', 'SettingController@bookItSendMailTour');
-Route::post('/book_it/send_mail_message/create_tour', 'SettingController@bookItSendMailTour');
+Route::post('/book_it/send_mail_message/helicopter', 'SettingController@bookItSendMailHelicopter');
+Route::post('/book_it/send_mail_message/create_tour', 'SettingController@createSendMailTour');
 Route::post('/schedule', ['as' => 'id', 'uses' => 'SettingController@scheduleApi']);
 
 

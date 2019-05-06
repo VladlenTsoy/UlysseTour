@@ -181,7 +181,7 @@
                                     <td>{{$helicopter->max_qty_tourists}}</td>
                                     <td>
                                         <a href="" data-toggle="modal"
-                                           data-target="#modalBookIt">{{$_lang->data->book_it}}</a>
+                                           data-target="#modalBookItHelinature" data-whatever="{{$helicopter->id}}">{{$_lang->data->book_it}}</a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -197,7 +197,7 @@
         </div>
 
         {{----}}
-        <div class="modal fade bd-example-modal-lg" id="modalBookIt" tabindex="-1" role="dialog" aria-labelledby="modal"
+        <div class="modal fade bd-example-modal-lg" id="modalBookItHelinature" tabindex="-1" role="dialog" aria-labelledby="modal"
              aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -208,7 +208,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="book_it_form">
+                        <form id="book_it_form_helicopter">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="alert alert-success alert-message" style="display: none" role="alert">
@@ -217,7 +217,8 @@
                                 </div>
                                 <div class="col-md-6">
 
-                                    {{--                                <input type="hidden" hidden value="{{$tour->id}}" name="id">--}}
+                                    <input type="hidden" hidden value="ВЕРТОЛЕТНЫЕ ТУРЫ" name="category">
+                                    <input type="hidden" hidden class="helicopter_id" value="" name="helicopter_id">
 
                                     <div class="form-group">
                                         <label for="first_name">{{$_lang->data->first_name}}</label>
@@ -279,7 +280,7 @@
                         <div class="col-12">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <button class="btn btn-primary btn-block" form="book_it_form"
+                                    <button class="btn btn-primary btn-block" form="book_it_form_helicopter"
                                             type="submit">{{$_lang->data->book_it}}</button>
                                     <br>
                                 </div>

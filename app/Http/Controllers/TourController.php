@@ -271,7 +271,7 @@ class TourController extends Controller
             'title' => $tag->title,
             'description' => $tag->description,
             'request_tour' => $request->has('country'),
-            'slide_img' => '/images/banner/hot-tour.png',
+            'slide_img' => '/files/helinature.png',
             'slide_title' => $language->data->helinature,
             'slide_desc' => $language->data->tours
         ];
@@ -301,7 +301,7 @@ class TourController extends Controller
             'title' => $tag->title,
             'description' => $tag->description,
             'text' => $language->data->heliski_text,
-            'slide_img' => '/files/c-asia.png',
+            'slide_img' => '/files/heliski.png',
             'slide_title' => $language->data->heliski,
             'slide_desc' => $language->data->tours
         ];
@@ -327,7 +327,7 @@ class TourController extends Controller
         $setting = [
             'title' => $tag->title,
             'description' => $tag->description,
-            'slide_img' => '/files/c-asia.png',
+            'slide_img' => '/files/business_fly.png',
             'slide_title' => $language->data->business_fly,
             'slide_desc' => $language->data->tours
         ];

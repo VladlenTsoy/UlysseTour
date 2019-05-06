@@ -22,6 +22,7 @@ class VerifyCsrfToken extends Middleware
         //
         '/admin/load/image',
         '/book_it/send_mail_message/tour',
+        '/book_it/send_mail_message/helicopter',
         '/book_it/send_mail_message/create_tour'
     ];
 }

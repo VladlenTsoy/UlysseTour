@@ -1,3 +1,4 @@
+<p>ID тура: {{$id}}</p>
 <p>Название тура: {{$tour_title}}</p>
 <p>Имя: {{$last_name}}</p>
 <p>Фамилия: {{$first_name}}</p>
