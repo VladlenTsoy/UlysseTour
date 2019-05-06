@@ -26,7 +26,7 @@ class SettingController extends Controller
             $ext = pathinfo($origName, PATHINFO_EXTENSION); // расширение
             $file_name = md5(basename($origName) . time()) . '.' . $ext; // новое имя файла
 
-            $img->save(public_path() . '/images/ckeditor/' . $file_name, 80);
+            $img->save(public_path() . '/images/ckeditor/' . $file_name, 99);
             $imgProfile = '/images/ckeditor/' . $file_name;
 
             return response()->json(["uploaded" => true, "url" => $imgProfile], 200);
