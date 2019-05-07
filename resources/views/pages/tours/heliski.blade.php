@@ -8,7 +8,7 @@
                 <div class="col-md-4">
                     {!! $_lang->data->heliski_text !!}
 
-                    <button class="btn btn-primary" data-toggle="modal"
+                    <button class="btn btn-primary btn-block" data-toggle="modal"
                             data-target="#modalBookItHeliski">{{$_lang->data->book_it}}</button>
                 </div>
                 <div class="col-md-8">
@@ -120,3 +120,6 @@
     </div>
 
 @endsection
+
+
+

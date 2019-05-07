@@ -235,7 +235,7 @@ class TourController extends Controller
         $guideService = GuideService::whereIn('id', $ids_guide_service)->get();
 
         $setting = [
-            'title' => $tour->meat_title,
+            'title' => $tour->meta_title,
             'description' => $tour->meta_description,
             'slide_title' => $tour->title,
             'slide_desc' => '',

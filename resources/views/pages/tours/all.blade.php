@@ -175,7 +175,7 @@
                             @foreach($helicopters as $helicopter)
                                 <tr>
                                     <td class="nowrap">{{ Carbon\Carbon::parse($helicopter->date)->format('d-m-Y')}}</td>
-                                    <td>{{$helicopter->title}}</td>
+                                    <td><a href="/{{$_lang->title}}/tour/{{$helicopter->tour_id}}" target="_blank">{{$helicopter->title}}</a></td>
                                     <td>{{$helicopter->place}}</td>
                                     <td>{{$helicopter->cost}}</td>
                                     <td>{{$helicopter->max_qty_tourists}}</td>

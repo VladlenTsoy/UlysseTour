@@ -11,6 +11,9 @@ use Ulyssetour\Content\Tour;
 
 class SettingController extends Controller
 {
+    public $email = 'info@ulyssetour.com';
+//    public $email = 'vladlengg@gmail.com';
+
     //
     public function loadImage(Request $request)
     {
@@ -51,8 +54,7 @@ class SettingController extends Controller
         date_default_timezone_set('Asia/Tashkent');
 
         $data = $request->all();
-        $email = 'info@ulyssetour.com';
-//        $email = 'vladlengg@gmail.com';
+        $email = $this->email;
 
         $tour = Tour::find($data['id']);
         $data['tour_title'] = $tour->title;
@@ -70,8 +72,7 @@ class SettingController extends Controller
         date_default_timezone_set('Asia/Tashkent');
 
         $data = $request->all();
-        $email = 'info@ulyssetour.com';
-//        $email = 'vladlengg@gmail.com';
+        $email = $this->email;
 
         if (isset($data['charter_id']))
             $data['charter'] = Charter::find($data['charter_id']);
@@ -96,8 +97,7 @@ class SettingController extends Controller
         date_default_timezone_set('Asia/Tashkent');
 
         $data = $request->all();
-        $email = 'info@ulyssetour.com';
-//        $email = 'vladlengg@gmail.com';
+        $email = $this->email;
 
         Mail::send('mail/sendCreateTour', $data, function ($m) use ($email) {
             $m->from('webmaster@limitless.uz', 'Уведомление с сайта');

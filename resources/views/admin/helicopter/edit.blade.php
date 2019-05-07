@@ -13,6 +13,15 @@
 
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="tour_id">Выберите тур</label>
+                                        <select class="form-control js-example-basic-single" name="tour_id" id="tour_id" required>
+                                            @foreach($tours as $tour)
+                                                <option @if($helicopter->tour_id === $tour->id) selected @endif value="{{$tour->id}}">#{{$tour->id}} {{$tour->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
 {{--                                    <div class="form-group">--}}
 {{--                                        <label for="category">Категория</label>--}}
 {{--                                        <select class="form-control" name="category" id="category" required>--}}

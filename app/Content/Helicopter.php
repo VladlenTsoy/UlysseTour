@@ -15,6 +15,7 @@ class Helicopter extends Model
         'cost',
         'place',
         'max_qty_tourists',
+        'tour_id',
         'lang'
     ];
 }

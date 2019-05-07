@@ -21,6 +21,7 @@ class CreateHelicoptersTable extends Migration
             $table->string('cost')->nullable();
             $table->text('place')->nullable();
             $table->integer('max_qty_tourists')->nullable();
+            $table->integer('tour_id')->nullable();
             $table->string('lang')->nullable();
             $table->timestamps();
         });

@@ -1,5 +1,8 @@
 <p>Категория: {{$category}}</p>
 <br>
+@isset($direction)
+    <p><b>Направления:</b> {{$direction}}</p>
+@endisset
 @isset($charter)
     <p><b>Направления</b></p>
     <p>Машрут: {{$charter->route}}</p>
@@ -8,7 +11,7 @@
 @endisset
 <br>
 @isset($helicopter)
-    <p><b>Распиание</b></p>
+    <p><b>Расписание</b></p>
     <p>Дата: {{$helicopter->date}}</p>
     <p>Название: {{$helicopter->title}}</p>
     <p>Место: {{$helicopter->place}}</p>

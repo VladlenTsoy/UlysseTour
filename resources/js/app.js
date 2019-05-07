@@ -481,6 +481,23 @@ $(document).ready(function () {
     });
 
 
+    $(document).on('submit', '#book_it_form_helicopter_use', function (e) {
+        e.preventDefault();
+        let data = sendForm($(e.currentTarget));
+
+        $.ajax({
+            method: "POST",
+            url: "/book_it/send_mail_message/helicopter",
+            data: data,
+        });
+
+        $('.alert-message').fadeIn();
+        $("#book_it_form_helicopter_use")[0].reset();
+
+        return false;
+    });
+
+
 
     $('#modalBookItBussines').on('show.bs.modal', function (event) {
         let button = $(event.relatedTarget); // Button that triggered the modal

@@ -10,6 +10,16 @@
 
     <title>{{$setting['title']}}</title>
     <meta name="description" content="{{$setting['description']}}">
+
+    <!-- OG -->
+    <meta property="og:site_name" content="ULYSSE TOUR">
+    <meta property="og:title" content="{{$setting['title']}}"/>
+    <meta property="og:description" content="{{$setting['description']}}"/>
+    @isset($setting['slide_img'])
+        <meta property="og:image"
+              content="http://ulyssetour.com{{$setting['slide_img']}}"/>
+    @endisset
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -56,7 +66,7 @@
                             {{$_lang->data->helicopter}}
                         </a>
                         <div class="dropdown-menu nav-dropdown" aria-labelledby="navbarDropdown">
-                             <a class="dropdown-item"
+                            <a class="dropdown-item"
                                href="/{{$_lang->title}}/helinature/{{$_tags['helinature'][0]->user_url}}">{{$_lang->data->helinature}}</a>
                             <a class="dropdown-item"
                                href="/{{$_lang->title}}/heliski/{{$_tags['heliski'][0]->user_url}}">{{$_lang->data->heliski}}</a>

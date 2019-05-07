@@ -193,6 +193,18 @@ $(document).ready(function () {
     }
 
     //
+    if ($('.js-example-basic-single', document).length) {
+        $('.js-example-basic-single', document).select2();
+        $(".js-example-basic-single", document).on("select2:select", function (evt) {
+            let element = evt.params.data.element;
+            let $element = $(element);
+            $element.detach();
+            $(this).append($element);
+            $(this).trigger("change")
+        })
+    }
+
+    //
     if ($('.js-ad-multiple', document).length) {
         $('.js-ad-multiple', document).select2();
         $(".js-ad-multiple", document).on("select2:select", function (evt) {

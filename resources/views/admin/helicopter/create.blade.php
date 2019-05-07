@@ -13,13 +13,23 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-{{--                                    <div class="form-group">--}}
-{{--                                        <label for="category">Категория</label>--}}
-{{--                                        <select class="form-control" name="category" id="category" required>--}}
-{{--                                            <option value="0">Heliski</option>--}}
-{{--                                            <option value="1">Business fly</option>--}}
-{{--                                        </select>--}}
-{{--                                    </div>--}}
+
+                                    <div class="form-group">
+                                        <label for="tour_id">Выберите тур</label>
+                                        <select class="form-control js-example-basic-single" name="tour_id" id="tour_id" required>
+                                            @foreach($tours as $tour)
+                                            <option value="{{$tour->id}}">#{{$tour->id}} {{$tour->title}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+
+                                    {{--                                    <div class="form-group">--}}
+                                    {{--                                        <label for="category">Категория</label>--}}
+                                    {{--                                        <select class="form-control" name="category" id="category" required>--}}
+                                    {{--                                            <option value="0">Heliski</option>--}}
+                                    {{--                                            <option value="1">Business fly</option>--}}
+                                    {{--                                        </select>--}}
+                                    {{--                                    </div>--}}
                                     <div class="form-group">
                                         <label for="date">Дата</label>
                                         <input type="date" class="form-control" id="date" name="date" required>
