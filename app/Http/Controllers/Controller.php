@@ -48,8 +48,9 @@ class Controller extends BaseController
         $tags_def = MetaTag::where('lang', 'ru')->get()->groupBy('url');
         $tags_current = MetaTag::where('lang', $language->title)->get()->groupBy('url');
 
+
         foreach ($tags_def as $key => $item)
-            $tags[$key] = isset($tags_def->{$key}) ? $tags_current->{$key} : $item;
+            $tags[$key] = isset($tags_current[$key]) ? $tags_current[$key] : $item;
 
         View::share('_lang', $language);
         View::share('_languages', $languages);

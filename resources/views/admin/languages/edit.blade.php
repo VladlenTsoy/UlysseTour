@@ -31,7 +31,8 @@
                                                         <label for="key_{{$key}}_{{$key_v}}">{{$val}}</label>
                                                         <input type="text" class="form-control"
                                                                id="key_{{$key}}_{{$key_v}}"
-                                                               name="{{$key}}[]" required value="{{$val}}">
+                                                               name="{{$key}}[]" required
+                                                               value="{{ property_exists($languages->data, $key) ? $languages->data->{$key}[$key_v] : '' }}">
                                                     </div>
                                                 </div>
                                             @endforeach
@@ -41,7 +42,7 @@
                                             <div class="form-group">
                                                 <label for="news-description">Описание</label>
                                                 <textarea class="form-control" id="news-description"
-                                                          name="{{$key}}">{{$item}}</textarea>
+                                                          name="{{$key}}">{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}</textarea>
                                             </div>
                                         </div>
 
@@ -50,7 +51,7 @@
                                             <div class="form-group">
                                                 <label for="helinature_text">Вертолетные туры</label>
                                                 <textarea class="form-control" id="helinature_text"
-                                                          name="{{$key}}">{{$item}}</textarea>
+                                                          name="{{$key}}">{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}</textarea>
                                             </div>
                                         </div>
 
@@ -59,7 +60,7 @@
                                             <div class="form-group">
                                                 <label for="business_fly_text">Чартеры</label>
                                                 <textarea class="form-control" id="business_fly_text"
-                                                          name="{{$key}}">{{$item}}</textarea>
+                                                          name="{{$key}}">{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}</textarea>
                                             </div>
                                         </div>
 
@@ -68,7 +69,7 @@
                                             <div class="form-group">
                                                 <label for="heliski_text">Хелиски Описание (Слева)</label>
                                                 <textarea class="form-control" id="heliski_text"
-                                                          name="{{$key}}">{{$item}}</textarea>
+                                                          name="{{$key}}">{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}</textarea>
                                             </div>
                                         </div>
 
@@ -77,7 +78,7 @@
                                             <div class="form-group">
                                                 <label for="heliski_description">Хелиски Иформация</label>
                                                 <textarea class="form-control" id="heliski_description"
-                                                          name="{{$key}}">{{$item}}</textarea>
+                                                          name="{{$key}}">{{ property_exists($languages->data, $key) ? $languages->data->{$key}:'' }}</textarea>
                                             </div>
                                         </div>
 
@@ -89,15 +90,16 @@
                                                         #{{$key_pluses+1}}</label>
                                                     <input type="text" class="form-control"
                                                            id="plus_title_{{$key_pluses}}"
-                                                           name="pluses_title[]" required value="{{$val->title}}">
+                                                           name="pluses_title[]" required
+                                                           value="{{ property_exists($languages->data, $key) ? $languages->data->{$key}[$key_pluses]->title:'' }}">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="plus_desc_{{$key_pluses}}">Название плюса
+                                                    <label for="plus_desc_{{$key_pluses}}">Описание плюса
                                                         #{{$key_pluses+1}}</label>
                                                     <textarea type="text" class="form-control"
                                                               id="plus_desc_{{$key_pluses}}"
                                                               name="pluses_description[]"
-                                                              required>{{$val->description}}</textarea>
+                                                              required>{{ property_exists($languages->data, $key) ? $languages->data->{$key}[$key_pluses]->description:'' }}</textarea>
                                                 </div>
                                             </div>
                                         @endforeach
