@@ -260,7 +260,7 @@ class TourController extends Controller
         $this->updateLanguage($lang, true);
         $language = Language::where('title', $lang)->first();
         $search = ['lang' => $language->title, 'hot' => null, 'helicopter' => 1];
-        $helicopters = Helicopter::where('lang', $language->title)->get();
+        $helicopters = Helicopter::where('lang', $language->title)->orderBy('date')->get();
 
         // Вывод тегов
         $tag = MetaTag::where(['url' => "helinature", 'lang' => $language->title])->first();

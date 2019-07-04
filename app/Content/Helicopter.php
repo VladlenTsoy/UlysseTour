@@ -18,4 +18,14 @@ class Helicopter extends Model
         'tour_id',
         'lang'
     ];
+
+    protected $appends = [
+        'tour_url'
+    ];
+
+    public function getTourUrlAttribute()
+    {
+        $tour = Tour::find($this->attributes['tour_id']);
+        return $tour ? $tour['url'] : null;
+    }
 }
