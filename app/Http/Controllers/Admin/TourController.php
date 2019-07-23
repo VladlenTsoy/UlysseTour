@@ -228,6 +228,8 @@ class TourController extends Controller
                 ]);
             }
             $saveObj['route'] = json_encode($saveObj['route']);
+        } else {
+            $saveObj['route'] = null;
         }
 
         $saveObj['conditions'] = $request->get('conditions');
