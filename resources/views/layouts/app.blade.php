@@ -103,7 +103,19 @@
                 </ul>
             </div>
             <div class="ml-auto navbar-collapse collapse nav-content">
-                <ul class="ml-auto nav navbar-nav text-nowrap flex-row ">
+                <ul class="ml-auto nav navbar-nav text-nowrap ">
+                    <li class="nav-item nav-item-icons-soc">
+                        <a href="https://www.instagram.com/ulyssetour/" target="_blank" class="social"><i
+                                    class="fa fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ulyssetour" target="_blank" class="social"><i
+                                    class="fa fa-facebook"></i></a>
+                        <a href="https://t.me/helinature" target="_blank" class="social"><i
+                                    class="fa fa-telegram"></i></a>
+                        <a href="https://twitter.com/ulyssetour" target="_blank" class="social"><i
+                                    class="fa fa-twitter"></i></a>
+                        <a href="https://vk.com/ulyssetour" target="_blank" class="social"><i
+                                    class="fa fa-vk"></i></a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

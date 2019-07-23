@@ -152,6 +152,19 @@ a {
     border-bottom: 2px solid #FFF
 }
 
+.nav-item-icons-soc{
+    display: flex;
+    align-items: center;
+    padding-left: .75rem;
+    margin-right: 0.5rem;
+}
+
+.nav-item-icons-soc  a{
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-right: 0.5rem;
+}
+
 .navbar-expand-md .navbar-nav .nav-link {
     padding-left: .75rem;
     padding-right: .75rem
