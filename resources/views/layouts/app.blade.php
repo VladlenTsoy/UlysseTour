@@ -105,7 +105,7 @@
             <div class="ml-auto navbar-collapse collapse nav-content">
                 <ul class="ml-auto nav navbar-nav text-nowrap ">
                     <li class="nav-item nav-item-icons-soc">
-                        <a href="https://www.instagram.com/ulyssetour/" target="_blank" class="social"><i
+                        <a href="https://www.instagram.com/ulyssetour_com/" target="_blank" class="social"><i
                                     class="fa fa-instagram"></i></a>
                         <a href="https://www.facebook.com/ulyssetour" target="_blank" class="social"><i
                                     class="fa fa-facebook"></i></a>
@@ -312,7 +312,7 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-9 text-md-left text-center">
-                    <a href="https://www.instagram.com/ulyssetour/" target="_blank" class="social"><i
+                    <a href="https://www.instagram.com/ulyssetour_com/" target="_blank" class="social"><i
                                 class="fa fa-instagram"></i></a>
                     <a href="https://www.facebook.com/ulyssetour" target="_blank" class="social"><i
                                 class="fa fa-facebook"></i></a>
